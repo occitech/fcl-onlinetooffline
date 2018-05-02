@@ -1,24 +1,27 @@
 {
   "name": "front-commerce-lite",
   "version": "1.0.0",
-  "description":
-    "Prototype your next eCommerce experiences using modern web technologies",
+  "description": "Prototype your next eCommerce experiences using modern web technologies",
   "scripts": {
     "lint": "eslint --max-warnings=0 --fix \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:server":
-      "NODE_ENV=development webpack --watch --config webpack.config.js --config-name server",
+    "watch:server": "NODE_ENV=development webpack --watch --config webpack.config.js --config-name server",
     "dev:server": "NODE_ENV=development nodemon build/server.js",
-    "dev:client":
-      "NODE_ENV=development webpack-dev-server --config webpack.config.js",
-    "start":
-      "concurrently -k \"npm run watch:server\" \"npm run dev:server\" \"npm run dev:client\""
+    "dev:client": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "start": "concurrently -k \"npm run watch:server\" \"npm run dev:server\" \"npm run dev:client\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/front-commerce/front-commerce-lite.git"
   },
-  "keywords": ["ecommerce", "react", "graphql", "apollo", "pwa", "magento2"],
+  "keywords": [
+    "ecommerce",
+    "react",
+    "graphql",
+    "apollo",
+    "pwa",
+    "magento2"
+  ],
   "author": "Front-Commerce",
   "license": "MIT",
   "bugs": {
