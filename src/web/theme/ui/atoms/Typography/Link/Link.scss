@@ -5,3 +5,8 @@ a {
 a.reversed {
   color: $reverseFontColor;
 }
+a.simple {
+  color: $fontColor;
+  text-decoration: none;
+  font-weight: $regular;
+}
