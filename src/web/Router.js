@@ -13,7 +13,7 @@ import NotFound from "./theme/pages/NotFound";
 
 export default () => (
   <BrowserRouter>
-    <Layout header={<Header />} footer={<Footer />}>
+    <Layout header={<Header />}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/product/:sku" component={Product} />
