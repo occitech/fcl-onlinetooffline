@@ -3,7 +3,7 @@
   border: none;
   color: $fontSecondaryColor;
   font-weight: $bold;
-  font-size: $normal;
+  font-size: $largeText;
   padding: 1.4em 3em;
   text-transform: uppercase;
   transition: all 0.2s;
@@ -18,7 +18,7 @@
     background-color: inherit;
     text-transform: none;
     color: inherit;
-    font-weight: normal;
+    font-weight: $largeText;
   }
 
   &.full-size {

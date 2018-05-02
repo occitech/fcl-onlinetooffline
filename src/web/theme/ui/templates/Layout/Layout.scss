@@ -1,5 +1,5 @@
 html {
-  font-size: $normal;
+  font-size: $largeText;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size-adjust: 100%;
@@ -9,7 +9,7 @@ body {
   color: $fontColor;
   background: $backgroundColor;
   font-family: $mainFontFamily;
-  font-style: normal;
+  font-style: $largeText;
   font-weight: $regular;
   line-height: 1.42857143;
   margin: 0;
