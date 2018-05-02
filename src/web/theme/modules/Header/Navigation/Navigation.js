@@ -13,26 +13,17 @@ const Navigation = ({ isNavigationOpened, setOpenStateNavigation }) => {
   const navigationClasses = `navigation--${
     isNavigationOpened ? "open" : "close"
   }`;
-  console.log(navigationClasses);
   return (
     <nav className={navigationClasses}>
       <IconButton onClick={setOpenStateNavigation} icon="menu" />
-      <ModalContext.Provider
-        value={() => {
-          console.log("requestClose");
-          setOpenStateNavigation();
-        }}
-      >
+      <ModalContext.Provider value={setOpenStateNavigation}>
         <ReactModal
           bodyOpenClassName="body--modal-opened"
           className="modal__navigation"
           overlayClassName="modal__overlay"
           closeTimeoutMS={200}
           isOpen={isNavigationOpened}
-          onRequestClose={() => {
-            console.log("requestClose");
-            setOpenStateNavigation();
-          }}
+          onRequestClose={setOpenStateNavigation}
         >
           <div className="navigation__linklist">
             <div className="navigation__linklist__label">
