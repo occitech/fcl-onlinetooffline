@@ -10,13 +10,10 @@ const ProductHomeView = ({
   Title,
   contentProductIntro,
   product,
-  isCurrent,
-  nextProduct,
-  viewProduct
+  active,
+  nextProduct
 }) => {
-  const productHomeViewClasses = `product-home-view--${
-    isCurrent ? "current" : "inactive"
-  }`;
+  const productHomeViewClasses = `product-home-view${active ? "--active" : ""}`;
   return (
     <div className={productHomeViewClasses}>
       <div className="product-home-view__title">
@@ -33,12 +30,7 @@ const ProductHomeView = ({
           </Link>
         </div>
         <div className="product-home-view__action__next-product">
-          <Button
-            onClick={() => {
-              nextProduct();
-            }}
-            type="simple"
-          >
+          <Button onClick={nextProduct} type="simple">
             <IconWithLabel icon="arrow-down" type="down">
               Next Product
             </IconWithLabel>
@@ -51,7 +43,7 @@ const ProductHomeView = ({
 
 Button.propTypes = {
   product: PropTypes.node,
-  isCurrent: PropTypes.bool,
+  active: PropTypes.bool,
   nextProduct: PropTypes.func,
   viewProduct: PropTypes.func
 };

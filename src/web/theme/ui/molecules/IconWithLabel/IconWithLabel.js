@@ -3,15 +3,8 @@ import PropTypes from "prop-types";
 import Icon from "theme/ui/atoms/Icon";
 import "./IconWithLabel.scss";
 
-const IconWithLabel = ({ icon, children, type = "up" }) => {
-  if (type === "up") {
-    return (
-      <span className="icon-with-label">
-        <Icon icon={icon} />
-        <span>{children}</span>
-      </span>
-    );
-  } else if (type === "down") {
+const IconWithLabel = ({ icon, children, type }) => {
+  if (type === "down") {
     return (
       <span className="icon-with-label">
         <span>{children}</span>
@@ -19,6 +12,12 @@ const IconWithLabel = ({ icon, children, type = "up" }) => {
       </span>
     );
   }
+  return (
+    <span className="icon-with-label">
+      <Icon icon={icon} />
+      <span>{children}</span>
+    </span>
+  );
 };
 
 IconWithLabel.propTypes = {

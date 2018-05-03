@@ -1,7 +1,6 @@
 import React from "react";
 import ProductHomeView from "./ProductHomeView";
-import compose from "recompose/compose";
-import { withState, withHandlers } from "recompose";
+import { compose, withState, withHandlers, withProps } from "recompose";
 
 const reassurances = [
   {
@@ -23,15 +22,15 @@ const ProductList = ({
 }) => {
   return (
     <div className="product-list">
-      {reassurances.map((reassurance, index) => {
+      {products.map((product, index) => {
         return (
           <ProductHomeView
-            key={products[index].name + index}
-            accentTitle={reassurance.accentTitle}
-            Title={reassurance.Title}
-            contentProductIntro={reassurance.contentProductIntro}
-            product={products[index]}
-            isCurrent={(index === currentProductIndex) & true}
+            key={product.sku}
+            accentTitle={product.accentTitle}
+            Title={product.Title}
+            contentProductIntro={product.contentProductIntro}
+            product={product}
+            active={index === currentProductIndex}
             nextProduct={setCurrentProductIndex}
           />
         );
@@ -50,5 +49,10 @@ export default compose(
         props.setCurrentProductIndex(0);
       }
     }
-  })
+  }),
+  withProps(props => ({
+    products: props.products
+      .slice(0, 2)
+      .map((product, index) => Object.assign({}, product, reassurances[index]))
+  }))
 )(ProductList);
