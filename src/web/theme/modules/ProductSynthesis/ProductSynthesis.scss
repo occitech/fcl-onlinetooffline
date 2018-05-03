@@ -6,12 +6,23 @@ $verticalSpacing: 2rem;
   &__title {
     text-align: center;
     margin-bottom: $verticalSpacing;
+    border-bottom: 2px solid $shade02;
+    padding: 1em 0;
+  }
+  &__description {
+    text-align: center;
+    &__title {
+      font-weight: $bold;
+    }
   }
 }
 
 .product-actions {
   text-align: center;
   margin-bottom: $verticalSpacing;
+  & > * {
+    margin: 1em 0;
+  }
 }
 
 @media screen and (min-width: $tablet) {
@@ -21,7 +32,7 @@ $verticalSpacing: 2rem;
     flex-flow: row wrap;
 
     &__title {
-      text-align: left;
+      text-align: center;
       margin-bottom: 2rem;
     }
   }
@@ -36,10 +47,6 @@ $verticalSpacing: 2rem;
     flex-direction: column;
     justify-content: flex-start;
     padding: 5rem 0;
-
-    > * {
-      padding-right: 3rem;
-    }
 
     &__title {
       margin-bottom: 2rem;
