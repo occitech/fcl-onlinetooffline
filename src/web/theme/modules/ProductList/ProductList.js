@@ -1,16 +1,54 @@
 import React from "react";
-import ProductItem from "../ProductItem";
-import MediaGrid from "theme/ui/organisms/MediaGrid";
+import ProductHomeView from "./ProductHomeView";
+import compose from "recompose/compose";
+import { withState, withHandlers } from "recompose";
 
-// We are using a specific JSX operator called the "spread" operator that will pass
-// all properties of the given "product" object as props to the ProductItem component
-// See : https://reactjs.org/docs/jsx-in-depth.html#spread-attributes
-const ProductList = ({ products }) => {
+const reassurances = [
+  {
+    accentTitle: "Feel",
+    Title: "the music",
+    contentProductIntro: "Discover our new"
+  },
+  {
+    accentTitle: "Rock",
+    Title: "your body",
+    contentProductIntro: "Fall in love with our classic "
+  }
+];
+
+const ProductList = ({
+  products,
+  currentProductIndex,
+  setCurrentProductIndex
+}) => {
   return (
-    <MediaGrid>
-      {products.map(product => <ProductItem key={product.sku} {...product} />)}
-    </MediaGrid>
+    <div className="product-list">
+      {reassurances.map((reassurance, index) => {
+        return (
+          <ProductHomeView
+            key={products[index].name + index}
+            accentTitle={reassurance.accentTitle}
+            Title={reassurance.Title}
+            contentProductIntro={reassurance.contentProductIntro}
+            product={products[index]}
+            isCurrent={(index === currentProductIndex) & true}
+            nextProduct={setCurrentProductIndex}
+          />
+        );
+      })}
+    </div>
   );
 };
 
-export default ProductList;
+export default compose(
+  withState("currentProductIndex", "setCurrentProductIndex", 0),
+  withHandlers({
+    setCurrentProductIndex: props => () => {
+      if (props.currentProductIndex < reassurances.length - 1) {
+        props.setCurrentProductIndex(props.currentProductIndex + 1);
+      } else {
+        props.setCurrentProductIndex(0);
+      }
+    }
+  })
+)(ProductList);
