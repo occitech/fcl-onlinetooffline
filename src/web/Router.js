@@ -9,6 +9,7 @@ import Footer from "./theme/modules/Footer";
 import Home from "./theme/pages/Home";
 import Product from "./theme/pages/Product";
 import Checkout from "./theme/pages/Checkout";
+import TryItPipe from "./theme/pages/TryItPipe";
 import NotFound from "./theme/pages/NotFound";
 
 export default () => (
@@ -18,7 +19,7 @@ export default () => (
         <Route exact path="/" component={Home} />
         <Route path="/product/:sku" component={Product} />
         <Route path="/checkout" component={Checkout} />
-
+        <Route path="/tryit/:sku" component={TryItPipe} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
