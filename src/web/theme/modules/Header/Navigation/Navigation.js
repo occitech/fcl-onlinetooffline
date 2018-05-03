@@ -8,21 +8,21 @@ import ModalContext from "theme/ui/templates/Modal/ModalContext";
 import { compose, withState, withHandlers } from "recompose";
 import "./Navigation.scss";
 
-const Navigation = ({ isNavigationOpened, setOpenStateNavigation }) => {
+const Navigation = ({ isNavigationOpened, toggleNavigation }) => {
   const navigationClasses = `navigation--${
     isNavigationOpened ? "open" : "close"
   }`;
   return (
     <nav className={navigationClasses}>
-      <IconButton onClick={setOpenStateNavigation} icon="menu" />
-      <ModalContext.Provider value={setOpenStateNavigation}>
+      <IconButton onClick={toggleNavigation} icon="menu" />
+      <ModalContext.Provider value={toggleNavigation}>
         <ReactModal
           bodyOpenClassName="body--modal-opened"
           className="modal__navigation"
           overlayClassName="modal__overlay"
           closeTimeoutMS={200}
           isOpen={isNavigationOpened}
-          onRequestClose={setOpenStateNavigation}
+          onRequestClose={toggleNavigation}
         >
           <div className="navigation__linklist">
             <div className="navigation__linklist__label">
@@ -35,7 +35,7 @@ const Navigation = ({ isNavigationOpened, setOpenStateNavigation }) => {
               </CartModal>
             </div>
             <div className="navigation__linklist__label">
-              <Link to={"/orderreference"} type="simple">
+              <Link to="/orderreference" type="simple">
                 Order Reference
               </Link>
             </div>
@@ -47,9 +47,9 @@ const Navigation = ({ isNavigationOpened, setOpenStateNavigation }) => {
 };
 
 export default compose(
-  withState("isNavigationOpened", "setOpenStateNavigation", false),
+  withState("isNavigationOpened", "toggleNavigation", false),
   withHandlers({
-    setOpenStateNavigation: props => () =>
-      props.setOpenStateNavigation(!props.isNavigationOpened)
+    toggleNavigation: props => () =>
+      props.toggleNavigation(!props.isNavigationOpened)
   })
 )(Navigation);
