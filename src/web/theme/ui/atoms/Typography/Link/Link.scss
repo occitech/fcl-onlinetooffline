@@ -1,7 +1,21 @@
 a {
   color: $brandPrimary;
   font-weight: bold;
-}
-a.reversed {
-  color: $reverseFontColor;
+  &.reversed {
+    color: $reverseFontColor;
+  }
+  &.dark {
+    text-align: center;
+    width: unset;
+    display: block;
+    color: $reverseFontColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $reverseBackgroundColor;
+    padding: 1.4em 3em;
+    border-radius: 50px;
+    &:hover {
+      background-color: lighten($reverseBackgroundColor, 10%);
+    }
+  }
 }
