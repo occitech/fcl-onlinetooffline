@@ -8,7 +8,6 @@ import Page from "theme/ui/templates/Page";
 
 const Home = ({ store, category, loading }) => (
   <Page>
-    <HomeBanner storeName={store && store.name} />
     {loading ? (
       <LoadingArea>Loading products…</LoadingArea>
     ) : (
