@@ -16,3 +16,8 @@ a {
     padding: 1em 3em;
   }
 }
+a.simple {
+  color: $fontColor;
+  text-decoration: none;
+  font-weight: $regular;
+}
