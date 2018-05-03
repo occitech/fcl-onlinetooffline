@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="32px" viewBox="0 0 8 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>ABE75B20-A043-4DBE-A877-7EDB74F316E8</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-1.0" transform="translate(-184.000000, -746.000000)" fill="#333333" fill-rule="nonzero">
+            <g id="product-1" transform="translate(1.000000, 44.000000)">
+                <g id="next-product" transform="translate(151.000000, 674.000000)">
+                    <path d="M39.7737954,55.4176 C39.4680706,55.1104 38.9840062,55.1104 38.7037584,55.4176 L36.8184551,57.312 L36.7643122,28.768 C36.7643122,28.3328 36.4331102,28 36,28 C35.5668898,28 35.2356878,28.3328 35.2356878,28.768 L35.2898308,57.3888 L33.3026192,55.392 C32.9968943,55.0848 32.51283,55.0848 32.2325822,55.392 C31.9268573,55.7248 31.9268573,56.2112 32.2071051,56.5184 L35.4426932,59.7696 C35.5955556,59.9232 35.7738951,60 35.9777117,60 C36.1815283,60 36.3598678,59.9232 36.5127302,59.7696 L39.7483184,56.5184 C40.0795203,56.2112 40.0795203,55.7248 39.7737954,55.4176 Z" id="icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
