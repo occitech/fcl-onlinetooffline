@@ -14,6 +14,7 @@ const AddToCart = ({ children, sku, onAdded }) => {
             addToCart({ variables: { sku } });
           }}
           status={loading ? "loading" : ""}
+          type="add-to-cart"
         >
           {children}
         </Button>
