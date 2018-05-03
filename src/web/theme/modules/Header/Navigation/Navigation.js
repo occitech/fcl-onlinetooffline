@@ -5,8 +5,7 @@ import { IconButton } from "theme/ui/atoms/Icon";
 import ReactModal from "react-modal";
 import Link from "theme/ui/atoms/Typography/Link";
 import ModalContext from "theme/ui/templates/Modal/ModalContext";
-import { withState, withHandlers } from "recompose";
-import compose from "recompose/compose";
+import { compose, withState, withHandlers } from "recompose";
 import "./Navigation.scss";
 
 const Navigation = ({ isNavigationOpened, setOpenStateNavigation }) => {
@@ -36,7 +35,7 @@ const Navigation = ({ isNavigationOpened, setOpenStateNavigation }) => {
               </CartModal>
             </div>
             <div className="navigation__linklist__label">
-              <Link to={`orderreference`} type="simple">
+              <Link to={"/orderreference"} type="simple">
                 Order Reference
               </Link>
             </div>
