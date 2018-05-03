@@ -4,6 +4,7 @@ import arrowLeft from "./arrow-left.svg?inline";
 import close from "./close.svg?inline";
 import trash from "./trash.svg?inline";
 import cart from "./cart.svg?inline";
+import menu from "./menu.svg?inline";
 import "./Icon.scss";
 
 const Icon = ({ icon }) => {
@@ -40,13 +41,22 @@ const Icon = ({ icon }) => {
         aria-hidden={true}
       />
     );
+  } else if (icon === "menu") {
+    return (
+      <span
+        className="icon"
+        dangerouslySetInnerHTML={{ __html: menu }}
+        aria-hidden={true}
+      />
+    );
   }
 
   return icon;
 };
 
 Icon.propTypes = {
-  icon: PropTypes.oneOf(["arrow-left", "close", "trash", "cart"]).isRequired
+  icon: PropTypes.oneOf(["arrow-left", "close", "trash", "cart", "menu"])
+    .isRequired
 };
 
 export default Icon;

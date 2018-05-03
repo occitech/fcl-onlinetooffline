@@ -1,0 +1,25 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.navigation {
+  &__linklist {
+    box-shadow: 1px 1px 10px $shade03;
+    background: white;
+    animation-duration: 0.5s;
+    animation-name: fadeIn;
+    opacity: 1;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    &__label {
+      padding: 1em;
+    }
+  }
+}
