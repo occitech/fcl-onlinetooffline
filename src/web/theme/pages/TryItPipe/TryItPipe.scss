@@ -1,0 +1,26 @@
+.try-it {
+  padding: 1em;
+  font-size: $normal;
+  max-width: $tablet;
+  margin: 0 auto;
+  &__header {
+    font-size: $h2;
+    font-weight: $bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__title {
+      &:after {
+        content: "";
+        height: 1px;
+        width: 1em;
+        background: $reverseBackgroundColor;
+      }
+    }
+
+    &__steps-count {
+      color: $shade03;
+    }
+  }
+}
