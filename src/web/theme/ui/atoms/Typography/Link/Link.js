@@ -26,7 +26,7 @@ LinkComponent.propTypes = {
   children: PropTypes.node.isRequired,
   external: PropTypes.bool,
   onClick: PropTypes.func,
-  type: PropTypes.oneOf(["reversed", "dark"])
+  type: PropTypes.oneOf(["reversed", "important", "simple", "dark"])
 };
 
 export default LinkComponent;

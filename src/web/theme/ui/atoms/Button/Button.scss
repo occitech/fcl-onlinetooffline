@@ -1,6 +1,6 @@
 .button {
-  background-color: $brandPrimary;
-  border: none;
+  background-color: $backgroundColor;
+  border: 1px solid black;
   color: $fontSecondaryColor;
   font-weight: $bold;
   font-size: $normal;
@@ -8,9 +8,10 @@
   text-transform: uppercase;
   transition: all 0.2s;
   cursor: pointer;
+  border-radius: 8px;
 
   &:hover {
-    background-color: $brandHoverPrimary;
+    background-color: darken($backgroundColor, 15%);
   }
 
   &.invisible {
@@ -34,6 +35,16 @@
     border-radius: 50px;
     &:hover {
       background-color: darken($backgroundColor, 10%);
+    }
+  }
+
+  &.simple {
+    border: none;
+    border-radius: none;
+    font-weight: $regular;
+    text-transform: unset;
+    &:hover {
+      background-color: $backgroundColor;
     }
   }
 }

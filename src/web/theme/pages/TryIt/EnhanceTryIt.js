@@ -1,6 +1,6 @@
 import { compose, withState, withHandlers } from "recompose";
 
-const EnhanceTryItPipe = steps => {
+const EnhanceTryIt = steps => {
   const getActiveStep = (currentStep, steps) => {
     if (currentStep !== undefined) {
       return currentStep;
@@ -42,4 +42,4 @@ const EnhanceTryItPipe = steps => {
   );
 };
 
-export default EnhanceTryItPipe;
+export default EnhanceTryIt;

@@ -1,16 +1,58 @@
 import React from "react";
-import ProductItem from "../ProductItem";
-import MediaGrid from "theme/ui/organisms/MediaGrid";
+import ProductHomeView from "./ProductHomeView";
+import { compose, withState, withHandlers, withProps } from "recompose";
 
-// We are using a specific JSX operator called the "spread" operator that will pass
-// all properties of the given "product" object as props to the ProductItem component
-// See : https://reactjs.org/docs/jsx-in-depth.html#spread-attributes
-const ProductList = ({ products }) => {
+const reassurances = [
+  {
+    accentTitle: "Feel",
+    Title: "the music",
+    contentProductIntro: "Discover our new"
+  },
+  {
+    accentTitle: "Rock",
+    Title: "your body",
+    contentProductIntro: "Fall in love with our classic "
+  }
+];
+
+const ProductList = ({
+  products,
+  currentProductIndex,
+  setCurrentProductIndex
+}) => {
   return (
-    <MediaGrid>
-      {products.map(product => <ProductItem key={product.sku} {...product} />)}
-    </MediaGrid>
+    <div className="product-list">
+      {products.map((product, index) => {
+        return (
+          <ProductHomeView
+            key={product.sku}
+            accentTitle={product.accentTitle}
+            Title={product.Title}
+            contentProductIntro={product.contentProductIntro}
+            product={product}
+            active={index === currentProductIndex}
+            nextProduct={setCurrentProductIndex}
+          />
+        );
+      })}
+    </div>
   );
 };
 
-export default ProductList;
+export default compose(
+  withState("currentProductIndex", "setCurrentProductIndex", 0),
+  withHandlers({
+    setCurrentProductIndex: props => () => {
+      if (props.currentProductIndex < reassurances.length - 1) {
+        props.setCurrentProductIndex(props.currentProductIndex + 1);
+      } else {
+        props.setCurrentProductIndex(0);
+      }
+    }
+  }),
+  withProps(props => ({
+    products: props.products
+      .slice(0, 2)
+      .map((product, index) => Object.assign({}, product, reassurances[index]))
+  }))
+)(ProductList);

@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { compose } from "recompose";
-import EnhanceTryItPipe from "./EnhanceTryItPipe";
+import EnhanceTryIt from "./EnhanceTryIt";
 import Button from "theme/ui/atoms/Button";
 
-import "./TryItPipe.scss";
+import "./TryIt.scss";
 import SelectStore from "./SelectStore";
 
 const steps = ["When", "Where", "Why"];
@@ -36,7 +36,7 @@ let step = ({
   }
 };
 
-let TryItPipe = ({
+let TryIt = ({
   currentStep,
   gotoStepNumber,
   tryItState,
@@ -69,6 +69,6 @@ let TryItPipe = ({
   );
 };
 
-TryItPipe.propTypes = { currentStep: PropTypes.string.isRequired };
+TryIt.propTypes = { currentStep: PropTypes.string.isRequired };
 
-export default compose(EnhanceTryItPipe(steps))(TryItPipe);
+export default compose(EnhanceTryIt(steps))(TryIt);

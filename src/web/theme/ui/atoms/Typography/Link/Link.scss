@@ -1,9 +1,17 @@
 a {
   color: $brandPrimary;
   font-weight: bold;
+
   &.reversed {
     color: $reverseFontColor;
   }
+
+  &.simple {
+    color: $fontColor;
+    text-decoration: none;
+    font-weight: $regular;
+  }
+
   &.dark {
     text-align: center;
     width: unset;
@@ -17,5 +25,15 @@ a {
     &:hover {
       background-color: lighten($reverseBackgroundColor, 10%);
     }
+  }
+
+  &.important {
+    color: $fontColor;
+    text-decoration: none;
+    border: 1px solid black;
+    font-size: $normal;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 1em 3em;
   }
 }
