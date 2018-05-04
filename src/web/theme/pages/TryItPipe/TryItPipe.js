@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { compose, withState } from "recompose";
+import { compose } from "recompose";
 import EnhanceTryItPipe from "./EnhanceTryItPipe";
 
 const steps = ["When", "Where", "Why"];
@@ -18,6 +18,6 @@ const TryItPipe = ({ currentStep }) => {
   }
 };
 
-TryItPipe.prototype = { currentStep: PropTypes.string.isRequired };
+TryItPipe.propTypes = { currentStep: PropTypes.string.isRequired };
 
 export default compose(EnhanceTryItPipe(steps))(TryItPipe);
