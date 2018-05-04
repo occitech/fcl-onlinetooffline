@@ -1,0 +1,10 @@
+.select-store {
+  &__title {
+    padding: $tryItPadding;
+    font-weight: $bold;
+  }
+  &__searchbar {
+    padding: $tryItPadding;
+    background: $shade02;
+  }
+}

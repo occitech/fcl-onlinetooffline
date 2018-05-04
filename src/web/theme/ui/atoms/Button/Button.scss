@@ -47,4 +47,19 @@
       background-color: $backgroundColor;
     }
   }
+
+  &.dark {
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: $reverseFontColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $reverseBackgroundColor;
+    padding: 1.4em 3em;
+    border-radius: 50px;
+    &:hover {
+      background-color: lighten($reverseBackgroundColor, 10%);
+    }
+  }
 }
