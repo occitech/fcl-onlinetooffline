@@ -7,14 +7,14 @@ const SelectStore = ({
   gotoStepNumber,
   tryItState,
   setTryItState,
-  getCurrentStepIndex,
+  getStepIndex,
   collapsed = false
 }) => {
   return (
     <div className="select-store">
       <div className="select-store__title">
         <span className="select-store__title__pins">
-          {getCurrentStepIndex() + 1}
+          {getStepIndex("When") + 1}
         </span>
         <span className="select-store__title__content">
           Select a store location on the map

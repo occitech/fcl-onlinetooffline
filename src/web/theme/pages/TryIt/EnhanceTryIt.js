@@ -22,15 +22,14 @@ const EnhanceTryIt = steps => {
       }
     }),
     withHandlers({
-      getCurrentStepIndex: props => () => {
-        console.log(
-          steps.findIndex(step => {
-            return step === props.currentStep;
-          })
-        );
-        return steps.findIndex(step => {
-          return step === props.currentStep;
-        });
+      getStepIndex: props => (specificStep = "current") => {
+        return specificStep === "current"
+          ? steps.findIndex(step => {
+              return step === props.currentStep;
+            })
+          : steps.findIndex(step => {
+              return step === specificStep;
+            });
       },
       gotoStepNumber: props => index => {
         const stepCandidate = steps[index];
