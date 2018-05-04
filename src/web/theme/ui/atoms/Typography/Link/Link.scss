@@ -6,6 +6,27 @@ a {
     color: $reverseFontColor;
   }
 
+  &.simple {
+    color: $fontColor;
+    text-decoration: none;
+    font-weight: $regular;
+  }
+
+  &.dark {
+    text-align: center;
+    width: unset;
+    display: block;
+    color: $reverseFontColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: $reverseBackgroundColor;
+    padding: 1.4em 3em;
+    border-radius: 50px;
+    &:hover {
+      background-color: lighten($reverseBackgroundColor, 10%);
+    }
+  }
+
   &.important {
     color: $fontColor;
     text-decoration: none;
@@ -15,9 +36,4 @@ a {
     border-radius: 8px;
     padding: 1em 3em;
   }
-}
-a.simple {
-  color: $fontColor;
-  text-decoration: none;
-  font-weight: $regular;
 }

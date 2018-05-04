@@ -27,6 +27,17 @@
     display: block;
   }
 
+  &.add-to-cart {
+    width: 100%;
+    display: block;
+    background-color: $backgroundColor;
+    border: 1px solid black;
+    border-radius: 50px;
+    &:hover {
+      background-color: darken($backgroundColor, 10%);
+    }
+  }
+
   &.simple {
     border: none;
     border-radius: none;

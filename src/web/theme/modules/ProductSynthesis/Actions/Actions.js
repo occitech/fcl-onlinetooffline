@@ -1,6 +1,7 @@
 import React from "react";
 import AddToCart from "theme/ui/molecules/AddToCart";
 import { CartModal } from "../../Cart";
+import Link from "theme/ui/atoms/Typography/Link";
 
 const Actions = ({ product }) => {
   return (
@@ -12,6 +13,9 @@ const Actions = ({ product }) => {
           </AddToCart>
         )}
       </CartModal>
+      <Link to={`/tryit/${product.sku}`} type="dark">
+        Try it first in our store
+      </Link>
     </div>
   );
 };
