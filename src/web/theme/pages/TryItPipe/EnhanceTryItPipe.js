@@ -15,7 +15,10 @@ const EnhanceTryItPipe = steps => {
     ),
     withHandlers({
       setTryItState: props => stateOverride => {
-        props.setTryItState(Object.assign({}, props.tryItState, stateOverride));
+        props.setTryItState({
+          ...props.tryItState,
+          ...stateOverride
+        });
       }
     }),
     withHandlers({
