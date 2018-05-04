@@ -3,12 +3,30 @@ import PropTypes from "prop-types";
 import { compose } from "recompose";
 import EnhanceTryItPipe from "./EnhanceTryItPipe";
 import Button from "theme/ui/atoms/Button";
+
+import "./TryItPipe.scss";
+import SelectStore from "./SelectStore";
+
 const steps = ["When", "Where", "Why"];
 
-let step = ({ currentStep, gotoStepNumber, tryItState, setTryItState }) => {
+let step = ({
+  currentStep,
+  gotoStepNumber,
+  tryItState,
+  setTryItState,
+  getCurrentStepIndex
+}) => {
   switch (currentStep) {
     case steps[0]:
-      return <div>Work In Progress</div>;
+      return (
+        <SelectStore
+          currentStep={currentStep}
+          gotoStepNumber={gotoStepNumber}
+          tryItState={tryItState}
+          setTryItState={setTryItState}
+          getCurrentStepIndex={getCurrentStepIndex}
+        />
+      );
     case steps[1]:
       return <div>Work In Progress</div>;
     case steps[2]:
