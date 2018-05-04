@@ -22,6 +22,16 @@ const EnhanceTryItPipe = steps => {
       }
     }),
     withHandlers({
+      getCurrentStepIndex: props => () => {
+        console.log(
+          steps.findIndex(step => {
+            return step === props.currentStep;
+          })
+        );
+        return steps.findIndex(step => {
+          return step === props.currentStep;
+        });
+      },
       gotoStepNumber: props => index => {
         const stepCandidate = steps[index];
         if (typeof stepCandidate !== "undefined") {
