@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { compose } from "recompose";
 import EnhanceTryIt from "./EnhanceTryIt";
@@ -14,7 +14,7 @@ let step = ({
   gotoStepNumber,
   tryItState,
   setTryItState,
-  getCurrentStepIndex
+  getStepIndex
 }) => {
   switch (currentStep) {
     case steps[0]:
@@ -24,11 +24,15 @@ let step = ({
           gotoStepNumber={gotoStepNumber}
           tryItState={tryItState}
           setTryItState={setTryItState}
-          getCurrentStepIndex={getCurrentStepIndex}
+          getStepIndex={getStepIndex}
         />
       );
     case steps[1]:
-      return <div>Work In Progress</div>;
+      return (
+        <Fragment>
+          <SelectStore getStepIndex={getStepIndex} collapsed />Work In Progress
+        </Fragment>
+      );
     case steps[2]:
       return <div>Work In Progress</div>;
     default:
@@ -41,13 +45,13 @@ let TryIt = ({
   gotoStepNumber,
   tryItState,
   setTryItState,
-  getCurrentStepIndex
+  getStepIndex
 }) => {
   return (
     <div className="try-it">
       <div className="try-it__header">
         <div className="try-it__header__title">Try it in our store</div>
-        <div className="try-it__header__steps-count">{`Step ${getCurrentStepIndex() +
+        <div className="try-it__header__steps-count">{`Step ${getStepIndex() +
           1}/${steps.length}`}</div>
       </div>
       {step({
@@ -55,15 +59,15 @@ let TryIt = ({
         gotoStepNumber,
         tryItState,
         setTryItState,
-        getCurrentStepIndex
+        getStepIndex
       })}
       <div className="try-it__footer">
         <Button
           onClick={() => {
-            gotoStepNumber(getCurrentStepIndex() + 1);
+            gotoStepNumber(getStepIndex() + 1);
           }}
           type="dark"
-        >{`Step ${getCurrentStepIndex() + 2} : `}</Button>
+        >{`Step ${getStepIndex() + 2} : `}</Button>
       </div>
     </div>
   );
