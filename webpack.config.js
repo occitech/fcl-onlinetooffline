@@ -42,8 +42,8 @@ const universalRules = [
     loader: "graphql-tag/loader"
   },
   {
-    test: /\.scss$/,
-    include: [srcPath],
+    test: /\.s?css$/,
+    include: [srcPath, path.resolve(__dirname, "node_modules/leaflet")],
     use: [
       {
         loader: "style-loader"
@@ -77,6 +77,7 @@ const universalRules = [
   },
   {
     test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2)(\?.*)?$/,
+    include: [srcPath, path.resolve(__dirname, "node_modules")],
     loader: "file-loader",
     query: {
       name: "static/media/[name].[hash:8].[ext]"

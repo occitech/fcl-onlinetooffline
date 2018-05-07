@@ -11,6 +11,8 @@ type StoreInformation {
   phone: String
   "Store owner"
   owner: StoreOwner
+  "Store coordinate"
+  coordinates: StoreCoordinates
 }
 
 """
@@ -34,4 +36,9 @@ enum ImageSize {
   large
   medium
   thumbnail
+}
+
+type StoreCoordinates {
+  latitude: Float
+  longitude: Float
 }

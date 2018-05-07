@@ -1,0 +1,13 @@
+query StoreLocator {
+  store {
+    name
+    phone
+    owner {
+      email
+    }
+    coordinates {
+      longitude
+      latitude
+    }
+  }
+}
