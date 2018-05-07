@@ -6,7 +6,22 @@ import "leaflet/dist/images/marker-icon.png";
 import "leaflet/dist/images/marker-shadow.png";
 import EnhanceSelectStore from "./EnhanceSelectStore";
 import SelectStoreQuery from "./SelectStoreQuery.gql";
+import Select from "react-select";
 import "./SelectStore.scss";
+
+const storeLocations = [
+  {
+    value: "35 Boulevard des Récollets, Toulouse",
+    label: "35 Boulevard des Récollets, Toulouse"
+  },
+  { value: "Capitole, Toulouse", label: "Capitole, Toulouse" },
+  {
+    value:
+      "Université Toulouse 1 Capitole, Rue du Doyen-Gabriel-Marty, Toulouse",
+    label:
+      "Université Toulouse 1 Capitole, Rue du Doyen-Gabriel-Marty, Toulouse"
+  }
+];
 
 const SelectStore = ({
   currentStep,
@@ -14,7 +29,9 @@ const SelectStore = ({
   tryItState,
   setTryItState,
   getStepIndex,
-  collapsed = false
+  collapsed = false,
+  loading,
+  store
 }) => {
   return (
     <div className="select-store">
@@ -29,7 +46,13 @@ const SelectStore = ({
       {!collapsed ? (
         <Fragment>
           <div className="select-store__searchbar">
-            <input />
+            <Select
+              onChange={(value, action) => {
+                setTryItState({ coordinate: value });
+              }}
+              options={storeLocations}
+            />
+          </div>
           <div className="select-store__map">
             {loading ? (
               <div>Loading...</div>
