@@ -1,6 +1,10 @@
 const storeInformation = {
   name: "My awesome store",
-  phone: "+33 102 030 405"
+  phone: "+33 102 030 405",
+  coordinates: {
+    latitude: 43.6,
+    longitude: 1.433333
+  }
 };
 
 export default {
