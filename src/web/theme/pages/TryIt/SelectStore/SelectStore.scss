@@ -26,5 +26,7 @@
   &__searchbar {
     padding: $tryItPadding;
     background: $shade02;
+    position: relative;
+    z-index: 1200;
   }
 }
