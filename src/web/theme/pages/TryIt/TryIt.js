@@ -6,8 +6,9 @@ import Button from "theme/ui/atoms/Button";
 
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
+import SelectDate from "./SelectDate";
 
-const steps = ["When", "Where", "Why"];
+const steps = ["Where", "When", "Why"];
 
 let step = ({
   currentStep,
@@ -30,7 +31,18 @@ let step = ({
     case steps[1]:
       return (
         <Fragment>
-          <SelectStore getStepIndex={getStepIndex} collapsed />Work In Progress
+          <SelectStore
+            currentStep={currentStep}
+            getStepIndex={getStepIndex}
+            collapsed
+          />
+          <SelectDate
+            currentStep={currentStep}
+            gotoStepNumber={gotoStepNumber}
+            tryItState={tryItState}
+            setTryItState={setTryItState}
+            getStepIndex={getStepIndex}
+          />
         </Fragment>
       );
     case steps[2]:
