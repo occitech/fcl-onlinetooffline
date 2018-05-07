@@ -1,8 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+import Step from "../Step";
 import "./SelectStore.scss";
 
 const SelectStore = ({
+  step = "Where",
   currentStep,
   gotoStepNumber,
   tryItState,
@@ -12,22 +14,18 @@ const SelectStore = ({
 }) => {
   return (
     <div className="select-store">
-      <div className="select-store__title">
-        <span className="select-store__title__pins">
-          {getStepIndex("When") + 1}
-        </span>
-        <span className="select-store__title__content">
-          Select a store location on the map
-        </span>
-      </div>
-      {!collapsed ? (
-        <Fragment>
-          <div className="select-store__searchbar">
-            <input />
-          </div>
-          <div className="select-store__map">Map</div>
-        </Fragment>
-      ) : null}
+      <Step
+        step={step}
+        currentStep={currentStep}
+        stepIndex={getStepIndex(step) + 1}
+        actionDescription="Select a store location on the map"
+        collapsed={collapsed}
+      >
+        <div className="select-store__searchbar">
+          <input />
+        </div>
+        <div className="select-store__map">Map</div>
+      </Step>
     </div>
   );
 };
