@@ -19,7 +19,7 @@ const Step = ({
         <span className="step__title__pins">{stepIndex}</span>
         <span className="step__title__content">{actionDescription}</span>
       </div>
-      {!collapsed ? children : null}
+      {collapsed ? null : children}
     </Fragment>
   );
 };
