@@ -9,20 +9,6 @@ import SelectStoreQuery from "./SelectStoreQuery.gql";
 import Select from "react-select";
 import "./SelectStore.scss";
 
-const storeLocations = [
-  {
-    value: "35 Boulevard des Récollets, Toulouse",
-    label: "35 Boulevard des Récollets, Toulouse"
-  },
-  { value: "Capitole, Toulouse", label: "Capitole, Toulouse" },
-  {
-    value:
-      "Université Toulouse 1 Capitole, Rue du Doyen-Gabriel-Marty, Toulouse",
-    label:
-      "Université Toulouse 1 Capitole, Rue du Doyen-Gabriel-Marty, Toulouse"
-  }
-];
-
 const SelectStore = ({
   currentStep,
   gotoStepNumber,
@@ -50,7 +36,7 @@ const SelectStore = ({
               onChange={(value, action) => {
                 setTryItState({ coordinate: value });
               }}
-              options={storeLocations}
+              options={loading ? null : addresses}
             />
           </div>
           <div className="select-store__map">

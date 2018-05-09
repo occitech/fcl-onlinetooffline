@@ -1,7 +1,8 @@
 query StoreLocator {
-  store {
+  stores {
     name
     phone
+    address
     owner {
       email
     }
