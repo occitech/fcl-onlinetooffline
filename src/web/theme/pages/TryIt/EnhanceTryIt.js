@@ -9,7 +9,9 @@ const EnhanceTryIt = steps => {
     }
   };
   return compose(
-    withState("tryItState", "setTryItState", {}),
+    withState("stepIsFilled", "setStepIsFilled", false),
+    withState("displayError", "setDisplayError", false),
+    withState("tryItState", "setTryItState", { address: "" }),
     withState("currentStep", "setCurrentStep", props =>
       getActiveStep(props.currentStep, steps)
     ),
@@ -32,6 +34,8 @@ const EnhanceTryIt = steps => {
             });
       },
       gotoStepNumber: props => index => {
+        props.setStepIsFilled(false);
+        props.setDisplayError(false);
         const stepCandidate = steps[index];
         if (typeof stepCandidate !== "undefined") {
           props.setCurrentStep(stepCandidate);
