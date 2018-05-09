@@ -38,8 +38,6 @@ let step = ({
           />
           <SelectDate
             currentStep={currentStep}
-            gotoStepNumber={gotoStepNumber}
-            tryItState={tryItState}
             setTryItState={setTryItState}
             getStepIndex={getStepIndex}
           />
