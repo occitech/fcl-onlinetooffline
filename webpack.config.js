@@ -44,6 +44,7 @@ const universalRules = [
   {
     test: /\.s?css$/,
     include: [srcPath, path.resolve(__dirname, "node_modules/leaflet")],
+      path.resolve(__dirname, "node_modules/react-dates/lib/css")
     use: [
       {
         loader: "style-loader"
