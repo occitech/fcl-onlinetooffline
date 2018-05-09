@@ -47,7 +47,7 @@ const SelectStore = ({
                 setStepIsFilled(true);
                 setTryItState({ address: value.value });
               }}
-              options={loading ? null : addresses}
+              options={loading ? [{ label: "", value: "" }] : addresses}
             />
           </div>
           <div className="select-store__map">
