@@ -1,0 +1,55 @@
+.reinsurance__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $tryItPadding;
+  & > * {
+    margin-bottom: 2em;
+  }
+
+  &__form {
+    margin: 0 auto;
+
+    input {
+      display: none;
+      ~ label {
+        &:before {
+          transition: 0.5s;
+          width: 1.75em;
+          height: 1.75em;
+          content: "";
+          border: 1px solid #333;
+          position: absolute;
+          display: block;
+          margin-left: -2.25em;
+          margin-top: -0.25em;
+          color: transparent;
+          font-size: 1rem;
+          font: normal normal normal 1em FontAwesome;
+          line-height: 1.5em;
+          background: $white;
+          border-radius: 4px;
+        }
+      }
+      &:checked {
+        ~ label {
+          &:before {
+            border-color: darken($success, 25%);
+            text-align: center;
+            content: "\26CC";
+            color: $fontColor;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $largeDesktop) {
+  .reinsurance__content__form {
+    margin: 2.25em;
+  }
+}
