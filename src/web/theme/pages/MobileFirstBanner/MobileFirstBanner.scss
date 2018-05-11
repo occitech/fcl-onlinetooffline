@@ -1,0 +1,11 @@
+.mobile-first-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  background: azure;
+
+  &--clicked {
+    display: none;
+  }
+}
