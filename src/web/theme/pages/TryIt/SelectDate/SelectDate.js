@@ -37,7 +37,7 @@ const SelectDate = ({
               setTryItState({ date: date._d });
             }}
             focused={true}
-            onFocusChange={({ focused }) => setFocused(true)}
+            onFocusChange={() => setFocused(true)}
             daySize={50}
             numberOfMonths={1}
           />
