@@ -7,81 +7,55 @@ import Button from "theme/ui/atoms/Button";
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
 
-const steps = ["When", "Where", "Why"];
+const steps = [
+  {
+    name: "When",
+    renderStep: props => (
+      <SelectStore
+        currentStep={props.currentStep}
+        gotoStepNumber={props.gotoStepNumber}
+        address={props.tryItState.address}
+        setTryItState={props.setTryItState}
+        getStepIndex={props.getStepIndex}
+        setStepIsFilled={props.setStepIsFilled}
+      />
+    )
+  },
+  {
+    name: "Where",
+    renderStep: props => (
+      <Fragment>
+        <SelectStore getStepIndex={props.getStepIndex} collapsed />Work In
+        Progress
+      </Fragment>
+    )
+  },
+  { name: "Why", renderStep: () => <div>Work In Progress</div> }
+];
 
-let step = ({
-  currentStep,
-  gotoStepNumber,
-  tryItState,
-  setTryItState,
-  getStepIndex,
-  setStepIsFilled
-}) => {
-  switch (currentStep) {
-    case steps[0]:
-      return (
-        <SelectStore
-          currentStep={currentStep}
-          gotoStepNumber={gotoStepNumber}
-          address={tryItState.address}
-          setTryItState={setTryItState}
-          getStepIndex={getStepIndex}
-          setStepIsFilled={setStepIsFilled}
-        />
-      );
-    case steps[1]:
-      return (
-        <Fragment>
-          <SelectStore getStepIndex={getStepIndex} collapsed />Work In Progress
-        </Fragment>
-      );
-    case steps[2]:
-      return <div>Work In Progress</div>;
-    default:
-      return null;
-  }
-};
-
-let TryIt = ({
-  currentStep,
-  gotoStepNumber,
-  tryItState,
-  setTryItState,
-  getStepIndex,
-  stepIsFilled,
-  setStepIsFilled,
-  displayError,
-  setDisplayError
-}) => {
+const TryIt = props => {
   return (
     <div className="try-it">
       <div className="try-it__header">
         <div className="try-it__header__title">Try it in our store</div>
-        <div className="try-it__header__steps-count">{`Step ${getStepIndex() +
+        <div className="try-it__header__steps-count">{`Step ${props.currentStep +
           1}/${steps.length}`}</div>
       </div>
-      {step({
-        currentStep,
-        gotoStepNumber,
-        tryItState,
-        setTryItState,
-        getStepIndex,
-        setStepIsFilled
-      })}
+      {steps[props.currentStep].renderStep(props)}
       <div className="try-it__footer">
         <Button
           onClick={() => {
-            if (stepIsFilled) {
-              gotoStepNumber(getStepIndex() + 1);
+            if (props.stepIsFilled) {
+              props.gotoStepNumber(props.currentStep + 1);
             } else {
-              setDisplayError(true);
+              props.setDisplayError(true);
             }
           }}
           type="dark"
-        >{`Step ${getStepIndex() + 2} : `}</Button>
+        >{`Step ${props.currentStep + 2} : `}</Button>
         <div
           className={`try-it__footer__error${
-            displayError ? "--displayed" : ""
+            props.displayError ? "--displayed" : ""
           }`}
         >
           You must fill the current form to be able to go further
@@ -91,6 +65,6 @@ let TryIt = ({
   );
 };
 
-TryIt.propTypes = { currentStep: PropTypes.string.isRequired };
+TryIt.propTypes = { currentStep: PropTypes.number.isRequired };
 
 export default compose(EnhanceTryIt(steps))(TryIt);
