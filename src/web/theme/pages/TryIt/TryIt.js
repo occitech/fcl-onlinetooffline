@@ -41,7 +41,28 @@ const steps = [
       </Fragment>
     )
   },
-  { name: "Why", renderStep: () => <Reinsurance /> }
+  {
+    name: "Why",
+    renderStep: props => (
+      <Fragment>
+        <SelectStore
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+          collapsed
+        />
+        <SelectDate
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+          collapsed
+        />
+        <Reinsurance
+          setStepIsFilled={props.setStepIsFilled}
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+        />
+      </Fragment>
+    )
+  },
 ];
 
 const TryIt = props => {
