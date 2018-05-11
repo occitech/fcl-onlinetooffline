@@ -8,6 +8,7 @@ import "./TryIt.scss";
 import SelectStore from "./SelectStore";
 import SelectDate from "./SelectDate";
 import Reinsurance from "./Reinsurance";
+import Validation from "./Validation";
 
 const steps = [
   {
@@ -63,6 +64,10 @@ const steps = [
       </Fragment>
     )
   },
+  {
+    name: "Validation",
+    renderStep: props => <Validation tryItState={props.tryItState} />
+  }
 ];
 
 const TryIt = props => {
@@ -79,6 +84,8 @@ const TryIt = props => {
           onClick={() => {
             if (props.stepIsFilled) {
               props.gotoStepNumber(props.currentStep + 1);
+            } else if (steps[props.currentStep].name === "Validation") {
+              props.history.push("/");
             } else {
               props.setDisplayError(true);
             }
