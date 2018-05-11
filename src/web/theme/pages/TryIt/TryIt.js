@@ -7,6 +7,7 @@ import Button from "theme/ui/atoms/Button";
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
 import SelectDate from "./SelectDate";
+import Reinsurance from "./Reinsurance";
 
 const steps = [
   {
@@ -40,7 +41,7 @@ const steps = [
       </Fragment>
     )
   },
-  { name: "Why", renderStep: () => <div>Work In Progress</div> }
+  { name: "Why", renderStep: () => <Reinsurance /> }
 ];
 
 const TryIt = props => {
