@@ -1,0 +1,50 @@
+.try-it {
+  padding: 1em 0;
+  font-size: $normal;
+  max-width: $tablet;
+  margin: 0 auto;
+
+  &__header {
+    font-size: $h2;
+    font-weight: $bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 $tryItPadding;
+    & > * {
+      padding: 1em 0;
+    }
+
+    &__title {
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 3em;
+        background: $reverseBackgroundColor;
+      }
+    }
+
+    &__steps-count {
+      color: $shade03;
+    }
+  }
+
+  &__footer {
+    padding: 1em $tryItPadding;
+
+    &__error {
+      display: none;
+      &--displayed {
+        padding: 1em;
+        color: $warning;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

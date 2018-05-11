@@ -29,7 +29,8 @@ Button.propTypes = {
     "invisible",
     "full-size",
     "simple",
-    "add-to-cart"
+    "add-to-cart",
+    "dark"
   ])
 };
 
