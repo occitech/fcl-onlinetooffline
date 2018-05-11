@@ -23,9 +23,8 @@ const SelectDate = ({
   return (
     <div className="select-date">
       <Step
-        step={step}
         currentStep={currentStep}
-        stepIndex={getStepIndex(step) + 1}
+        stepIndex={getStepIndex(step)}
         actionDescription="Select a date on the calendar"
         collapsed={collapsed}
       >

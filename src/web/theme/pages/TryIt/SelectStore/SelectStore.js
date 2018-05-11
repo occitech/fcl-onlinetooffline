@@ -12,7 +12,7 @@ import Select from "react-select";
 import "./SelectStore.scss";
 
 const SelectStore = ({
-  step = "Where",
+  stepName = "Where",
   currentStep,
   gotoStepNumber,
   setTryItState,
@@ -27,9 +27,8 @@ const SelectStore = ({
   return (
     <div className="select-store">
       <Step
-        step={step}
         currentStep={currentStep}
-        stepIndex={getStepIndex(step) + 1}
+        stepIndex={getStepIndex(stepName)}
         actionDescription="Select a store location on the map"
         collapsed={collapsed}
       >

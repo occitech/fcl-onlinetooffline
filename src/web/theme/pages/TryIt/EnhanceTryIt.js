@@ -8,7 +8,7 @@ const EnhanceTryIt = steps => {
     withState(
       "currentStep",
       "setCurrentStep",
-      props => (props.currentStep ? props.currentStep : steps[0])
+      props => (props.currentStep ? props.currentStep : 0)
     ),
     withHandlers({
       setTryItState: props => stateOverride => {
@@ -19,21 +19,13 @@ const EnhanceTryIt = steps => {
       }
     }),
     withHandlers({
-      getStepIndex: props => (specificStep = "current") => {
-        return specificStep === "current"
-          ? steps.findIndex(step => {
-              return step === props.currentStep;
-            })
-          : steps.findIndex(step => {
-              return step === specificStep;
-            });
-      },
+      getStepIndex: props => name =>
+        steps.findIndex(step => step.name === name),
       gotoStepNumber: props => index => {
         props.setStepIsFilled(false);
         props.setDisplayError(false);
-        const stepCandidate = steps[index];
-        if (typeof stepCandidate !== "undefined") {
-          props.setCurrentStep(stepCandidate);
+        if (steps[index]) {
+          props.setCurrentStep(index);
         }
       }
     })
