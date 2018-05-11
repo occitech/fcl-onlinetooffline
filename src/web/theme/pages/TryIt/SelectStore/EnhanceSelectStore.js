@@ -5,7 +5,13 @@ export default SelectStoreQuery =>
     props: ({ data }) => {
       return {
         loading: data.loading,
-        store: data.loading ? null : data.store
+        stores: data.loading ? null : data.stores,
+        addresses: data.loading
+          ? null
+          : data.stores.map(({ address }) => ({
+              value: address,
+              label: address
+            }))
       };
     }
   });

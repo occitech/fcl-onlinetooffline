@@ -15,7 +15,8 @@ let step = ({
   gotoStepNumber,
   tryItState,
   setTryItState,
-  getStepIndex
+  getStepIndex,
+  setStepIsFilled
 }) => {
   switch (currentStep) {
     case steps[0]:
@@ -23,9 +24,10 @@ let step = ({
         <SelectStore
           currentStep={currentStep}
           gotoStepNumber={gotoStepNumber}
-          tryItState={tryItState}
+          address={tryItState.address}
           setTryItState={setTryItState}
           getStepIndex={getStepIndex}
+          setStepIsFilled={setStepIsFilled}
         />
       );
     case steps[1]:
@@ -40,6 +42,7 @@ let step = ({
             currentStep={currentStep}
             setTryItState={setTryItState}
             getStepIndex={getStepIndex}
+            setStepIsFilled={setStepIsFilled}
           />
         </Fragment>
       );
@@ -55,7 +58,11 @@ let TryIt = ({
   gotoStepNumber,
   tryItState,
   setTryItState,
-  getStepIndex
+  getStepIndex,
+  stepIsFilled,
+  setStepIsFilled,
+  displayError,
+  setDisplayError
 }) => {
   return (
     <div className="try-it">
@@ -69,15 +76,27 @@ let TryIt = ({
         gotoStepNumber,
         tryItState,
         setTryItState,
-        getStepIndex
+        getStepIndex,
+        setStepIsFilled
       })}
       <div className="try-it__footer">
         <Button
           onClick={() => {
-            gotoStepNumber(getStepIndex() + 1);
+            if (stepIsFilled) {
+              gotoStepNumber(getStepIndex() + 1);
+            } else {
+              setDisplayError(true);
+            }
           }}
           type="dark"
         >{`Step ${getStepIndex() + 2} : `}</Button>
+        <div
+          className={`try-it__footer__error${
+            displayError ? "--displayed" : ""
+          }`}
+        >
+          You must fill the current form to be able to go further
+        </div>
       </div>
     </div>
   );

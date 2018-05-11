@@ -1,17 +1,14 @@
 import { compose, withState, withHandlers } from "recompose";
 
 const EnhanceTryIt = steps => {
-  const getActiveStep = (currentStep, steps) => {
-    if (currentStep !== undefined) {
-      return currentStep;
-    } else {
-      return steps[0];
-    }
-  };
   return compose(
-    withState("tryItState", "setTryItState", {}),
-    withState("currentStep", "setCurrentStep", props =>
-      getActiveStep(props.currentStep, steps)
+    withState("stepIsFilled", "setStepIsFilled", false),
+    withState("displayError", "setDisplayError", false),
+    withState("tryItState", "setTryItState", { address: "" }),
+    withState(
+      "currentStep",
+      "setCurrentStep",
+      props => (props.currentStep ? props.currentStep : steps[0])
     ),
     withHandlers({
       setTryItState: props => stateOverride => {
@@ -32,6 +29,8 @@ const EnhanceTryIt = steps => {
             });
       },
       gotoStepNumber: props => index => {
+        props.setStepIsFilled(false);
+        props.setDisplayError(false);
         const stepCandidate = steps[index];
         if (typeof stepCandidate !== "undefined") {
           props.setCurrentStep(stepCandidate);

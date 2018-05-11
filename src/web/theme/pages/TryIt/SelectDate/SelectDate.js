@@ -13,6 +13,7 @@ const SelectDate = ({
   currentStep,
   setTryItState,
   getStepIndex,
+  setStepIsFilled,
   collapsed = false,
   setDate,
   date,
@@ -32,6 +33,7 @@ const SelectDate = ({
           <DayPickerSingleDateController
             date={date}
             onDateChange={date => {
+              setStepIsFilled(true);
               setDate(date);
               setTryItState({ date: date._d });
             }}

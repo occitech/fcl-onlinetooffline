@@ -1,6 +1,6 @@
 type Query {
   "General information about this store"
-  store: StoreInformation
+  stores: [StoreInformation]!
 }
 
 "General information about a store"
@@ -9,6 +9,8 @@ type StoreInformation {
   name: String!
   "Support phone number"
   phone: String
+  "Store address"
+  address: String
   "Store owner"
   owner: StoreOwner
   "Store coordinate"

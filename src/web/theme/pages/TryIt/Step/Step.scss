@@ -22,10 +22,10 @@
       align-items: center;
     }
     &__pins {
-      color: #fff;
-      background: #333333;
+      color: $white;
+      background: $reverseBackgroundColor;
       #{$this}--validated & {
-        color: #fff;
+        color: $white;
         background: $success;
       }
     }

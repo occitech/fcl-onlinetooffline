@@ -36,5 +36,15 @@
 
   &__footer {
     padding: 1em $tryItPadding;
+
+    &__error {
+      display: none;
+      &--displayed {
+        padding: 1em;
+        color: $warning;
+        display: flex;
+        justify-content: center;
+      }
+    }
   }
 }
