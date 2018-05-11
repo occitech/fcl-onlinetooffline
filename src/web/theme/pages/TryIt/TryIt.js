@@ -70,6 +70,17 @@ const steps = [
   }
 ];
 
+const nextStepButtonTitle = ({ steps, currentStep, setStepIsFilled }) => {
+  if ("Why" === steps[currentStep].name) {
+    return "FINISH MY BOOKING";
+  }
+  if ("Validation" === steps[currentStep].name) {
+    return "BACK TO HOME PAGE";
+  } else {
+    return `Step ${currentStep + 2}`;
+  }
+};
+
 const TryIt = props => {
   return (
     <div className="try-it">
@@ -91,7 +102,9 @@ const TryIt = props => {
             }
           }}
           type="dark"
-        >{`Step ${props.currentStep + 2} : `}</Button>
+        >
+          {nextStepButtonTitle({ steps, currentStep: props.currentStep })}
+        </Button>
         <div
           className={`try-it__footer__error${
             props.displayError ? "--displayed" : ""
