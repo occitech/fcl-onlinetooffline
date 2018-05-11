@@ -6,10 +6,11 @@ import Button from "theme/ui/atoms/Button";
 
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
+import SelectDate from "./SelectDate";
 
 const steps = [
   {
-    name: "When",
+    name: "Where",
     renderStep: props => (
       <SelectStore
         currentStep={props.currentStep}
@@ -22,11 +23,20 @@ const steps = [
     )
   },
   {
-    name: "Where",
+    name: "When",
     renderStep: props => (
       <Fragment>
-        <SelectStore getStepIndex={props.getStepIndex} collapsed />Work In
-        Progress
+        <SelectStore
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+          collapsed
+        />
+        <SelectDate
+          currentStep={props.currentStep}
+          setTryItState={props.setTryItState}
+          getStepIndex={props.getStepIndex}
+          setStepIsFilled={props.setStepIsFilled}
+        />
       </Fragment>
     )
   },
