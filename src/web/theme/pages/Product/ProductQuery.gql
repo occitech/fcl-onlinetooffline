@@ -5,6 +5,10 @@ fragment Product on Product {
   name
   imageUrl
   description
+  images {
+    id
+    file
+  }
   prices {
     finalPrice {
       priceInclTax {

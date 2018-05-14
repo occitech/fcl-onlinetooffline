@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import HomeQuery from "./HomeQuery.gql";
 import EnhanceHome from "./EnhanceHome";
 import ProductList from "theme/modules/ProductList";

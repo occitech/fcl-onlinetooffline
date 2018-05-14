@@ -18,13 +18,12 @@ const Product = ({ loading, product }) => {
   } else if (!product) {
     return <Redirect to="/not-found" />;
   }
-
   return (
     <div>
       <PageWithMedia
         media={
           <HeroImage
-            path={createMediaUrlFromPath(product.imageUrl)}
+            path={createMediaUrlFromPath(product.images[0].file)}
             alt={product.name}
           />
         }

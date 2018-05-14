@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import ProductHomeView from "./ProductHomeView";
 import { compose, withState, withHandlers, withProps } from "recompose";
 
@@ -24,15 +24,16 @@ const ProductList = ({
     <div className="product-list">
       {products.map((product, index) => {
         return (
-          <ProductHomeView
-            key={product.sku}
-            accentTitle={product.accentTitle}
-            Title={product.Title}
-            contentProductIntro={product.contentProductIntro}
-            product={product}
-            active={index === currentProductIndex}
-            nextProduct={setCurrentProductIndex}
-          />
+          <Fragment key={product.sku}>
+            <ProductHomeView
+              accentTitle={product.accentTitle}
+              Title={product.Title}
+              contentProductIntro={product.contentProductIntro}
+              product={product}
+              active={index === currentProductIndex}
+              nextProduct={setCurrentProductIndex}
+            />
+          </Fragment>
         );
       })}
     </div>

@@ -5,4 +5,10 @@ fragment ProductItemFragment on Product {
   ...ProductPriceFragment
   imageUrl
   sku
+  images {
+    id
+    file
+    alt
+    position
+  }
 }

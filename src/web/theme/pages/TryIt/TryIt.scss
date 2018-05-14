@@ -3,6 +3,7 @@
   font-size: $normal;
   max-width: $tablet;
   margin: 0 auto;
+  color: $fontSecondaryColor;
 
   &__header {
     font-size: $h2;
@@ -25,12 +26,12 @@
         bottom: 0;
         height: 2px;
         width: 3em;
-        background: $reverseBackgroundColor;
+        background: $shade02;
       }
     }
 
     &__steps-count {
-      color: $shade03;
+      color: $shade02;
     }
   }
 
