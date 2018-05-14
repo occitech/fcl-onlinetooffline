@@ -3,7 +3,7 @@
   border: none;
   color: $fontColor;
   font-weight: $bold;
-  font-size: $normal;
+  font-size: $body;
   padding: 1.4em 3em;
   text-transform: uppercase;
   transition: all 0.2s;
@@ -38,10 +38,12 @@
   }
 
   &.simple {
+    color: $fontSecondaryColor;
     border: none;
     border-radius: none;
     font-weight: $regular;
     text-transform: unset;
+    padding: 0;
     &:hover {
       background-color: $backgroundColor;
     }

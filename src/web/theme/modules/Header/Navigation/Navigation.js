@@ -28,7 +28,7 @@ const Navigation = ({ isNavigationOpened, toggleNavigation }) => {
             <div className="navigation__linklist__label">
               <CartModal>
                 {openCart => (
-                  <Button type="invisible" onClick={openCart}>
+                  <Button type="simple" onClick={openCart}>
                     Cart
                   </Button>
                 )}

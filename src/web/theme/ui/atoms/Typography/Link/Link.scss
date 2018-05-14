@@ -7,7 +7,7 @@ a {
   }
 
   &.simple {
-    color: $fontColor;
+    color: $fontSecondaryColor;
     text-decoration: none;
     font-weight: $regular;
   }
@@ -33,7 +33,7 @@ a {
     color: $fontColor;
     text-decoration: none;
     background: linear-gradient(to bottom right, #f50146, #002c56);
-    font-size: $normal;
+    font-size: $body;
     text-transform: uppercase;
     border-radius: 8px;
     padding: 1em 3em;
