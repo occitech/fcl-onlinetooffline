@@ -14,8 +14,8 @@ const MobileFirstBanner = ({ bannerState, setBannerState }) => {
       }}
       className={bannerClassName}
     >
-      this Web Site is mostly design to mobile devices. You can still use it on
-      desktop however your experience would be better on mobile devices. clic on
+      This Web Site is mostly design to mobile devices. You can still use it on
+      desktop however your experience would be better on mobile devices. Clic on
       this banner to make it disappear.
     </div>
   );
