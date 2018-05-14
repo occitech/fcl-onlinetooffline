@@ -7,6 +7,8 @@ import Button from "theme/ui/atoms/Button";
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
 import SelectDate from "./SelectDate";
+import Reinsurance from "./Reinsurance";
+import Validation from "./Validation";
 
 const steps = [
   {
@@ -40,29 +42,71 @@ const steps = [
       </Fragment>
     )
   },
-  { name: "Why", renderStep: () => <div>Work In Progress</div> }
+  {
+    name: "Why",
+    renderStep: props => (
+      <Fragment>
+        <SelectStore
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+          collapsed
+        />
+        <SelectDate
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+          collapsed
+        />
+        <Reinsurance
+          setStepIsFilled={props.setStepIsFilled}
+          currentStep={props.currentStep}
+          getStepIndex={props.getStepIndex}
+        />
+      </Fragment>
+    )
+  },
+  {
+    name: "Validation",
+    renderStep: props => <Validation tryItState={props.tryItState} />
+  }
 ];
+
+const nextStepButtonTitle = ({ steps, currentStep, setStepIsFilled }) => {
+  if ("Why" === steps[currentStep].name) {
+    return "FINISH MY BOOKING";
+  }
+  if ("Validation" === steps[currentStep].name) {
+    return "BACK TO HOME PAGE";
+  } else {
+    return `Step ${currentStep + 2}`;
+  }
+};
 
 const TryIt = props => {
   return (
     <div className="try-it">
-      <div className="try-it__header">
-        <div className="try-it__header__title">Try it in our store</div>
-        <div className="try-it__header__steps-count">{`Step ${props.currentStep +
-          1}/${steps.length}`}</div>
-      </div>
+      {props.currentStep !== steps.length - 1 ? (
+        <div className="try-it__header">
+          <div className="try-it__header__title">Try it in our store</div>
+          <div className="try-it__header__steps-count">{`Step ${props.currentStep +
+            1}/${steps.length}`}</div>
+        </div>
+      ) : null}
       {steps[props.currentStep].renderStep(props)}
       <div className="try-it__footer">
         <Button
           onClick={() => {
             if (props.stepIsFilled) {
               props.gotoStepNumber(props.currentStep + 1);
+            } else if (steps[props.currentStep].name === "Validation") {
+              props.history.push("/");
             } else {
               props.setDisplayError(true);
             }
           }}
           type="dark"
-        >{`Step ${props.currentStep + 2} : `}</Button>
+        >
+          {nextStepButtonTitle({ steps, currentStep: props.currentStep })}
+        </Button>
         <div
           className={`try-it__footer__error${
             props.displayError ? "--displayed" : ""
