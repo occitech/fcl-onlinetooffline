@@ -84,11 +84,13 @@ const nextStepButtonTitle = ({ steps, currentStep, setStepIsFilled }) => {
 const TryIt = props => {
   return (
     <div className="try-it">
-      <div className="try-it__header">
-        <div className="try-it__header__title">Try it in our store</div>
-        <div className="try-it__header__steps-count">{`Step ${props.currentStep +
-          1}/${steps.length}`}</div>
-      </div>
+      {props.currentStep !== steps.length - 1 ? (
+        <div className="try-it__header">
+          <div className="try-it__header__title">Try it in our store</div>
+          <div className="try-it__header__steps-count">{`Step ${props.currentStep +
+            1}/${steps.length}`}</div>
+        </div>
+      ) : null}
       {steps[props.currentStep].renderStep(props)}
       <div className="try-it__footer">
         <Button

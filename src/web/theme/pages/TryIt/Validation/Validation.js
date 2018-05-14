@@ -1,32 +1,33 @@
 import React from "react";
 import "./Validation.scss";
 import validation from "./Validation.png";
+import PropTypes from "prop-types";
 
 const getMonthName = MonthNumber => {
   switch (MonthNumber) {
-    case 1:
+    case 0:
       return "January";
-    case 2:
+    case 1:
       return "February";
-    case 3:
+    case 2:
       return "March";
-    case 4:
+    case 3:
       return "April";
-    case 5:
+    case 4:
       return "May";
-    case 6:
+    case 5:
       return "June";
-    case 7:
+    case 6:
       return "July";
-    case 8:
+    case 7:
       return "August";
-    case 9:
+    case 8:
       return "September";
-    case 10:
+    case 9:
       return "October";
-    case 11:
+    case 10:
       return "November";
-    case 12:
+    case 11:
       return "December";
 
     default:
@@ -73,13 +74,13 @@ const Validation = ({ step = "Validation", tryItState }) => {
         </div>
       </div>
       <div>
-        Our team will prepare anything. Just come, test your guitar and take
+        Our team will prepare everything. Just come, test your guitar and take
         your final decision. See you soon !
       </div>
     </div>
   );
 };
 
-Validation.propTypes = {};
+Validation.propTypes = { step: PropTypes.string, tryItState: PropTypes.object };
 
 export default Validation;

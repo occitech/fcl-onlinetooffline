@@ -1,5 +1,6 @@
 import React from "react";
 import Step from "../Step";
+import PropTypes from "prop-types";
 import { compose, withState, withHandlers } from "recompose";
 import "./Reinsurance.scss";
 
@@ -20,19 +21,17 @@ const Reinsurance = ({
       collapsed={collapsed}
     >
       <div className="reinsurance__content">
-        <span>
+        <div>
           Please be sure you have selected the right store and date before
           booking the appointment.
-        </span>
-        <span>
-          Last little action required from you : accept our
-          <strong> Terms & Conditions</strong>. Then you’re good to go !
-        </span>
+        </div>
+        <div>
+          Last little action required from you: accept our
+          <strong> Terms & Conditions</strong>. Then you’re good to go!
+        </div>
         <div className="reinsurance__content__form">
           <input
-            onChange={() => {
-              setTermConditionChecked();
-            }}
+            onChange={setTermConditionChecked}
             type="checkbox"
             id="termCondition"
           />
@@ -45,7 +44,15 @@ const Reinsurance = ({
   );
 };
 
-Reinsurance.propTypes = {};
+Reinsurance.propTypes = {
+  step: PropTypes.string,
+  currentStep: PropTypes.number,
+  getStepIndex: PropTypes.func,
+  setStepIsFilled: PropTypes.func,
+  collapsed: PropTypes.bool,
+  setTermConditionChecked: PropTypes.func,
+  termConditionChecked: PropTypes.bool
+};
 
 export default compose(
   withState("termConditionChecked", "setTermConditionChecked", false),
