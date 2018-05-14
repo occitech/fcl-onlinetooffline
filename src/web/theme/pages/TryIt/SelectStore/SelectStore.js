@@ -14,7 +14,6 @@ import "./SelectStore.scss";
 const SelectStore = ({
   stepName = "Where",
   currentStep,
-  gotoStepNumber,
   setTryItState,
   getStepIndex,
   setStepIsFilled,
@@ -100,7 +99,12 @@ const SelectStore = ({
 };
 
 SelectStore.propTypes = {
+  step: PropTypes.string,
+  currentStep: PropTypes.number,
+  getStepIndex: PropTypes.func,
+  setStepIsFilled: PropTypes.func,
   collapsed: PropTypes.bool,
+  setTryItState: PropTypes.func,
   loading: PropTypes.bool.isRequired,
   store: PropTypes.shape({
     name: PropTypes.string,

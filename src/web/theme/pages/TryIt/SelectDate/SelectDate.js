@@ -48,7 +48,15 @@ const SelectDate = ({
 };
 
 SelectDate.propTypes = {
+  step: PropTypes.string,
+  currentStep: PropTypes.number,
+  getStepIndex: PropTypes.func,
+  setStepIsFilled: PropTypes.func,
+  collapsed: PropTypes.bool,
+  setTryItState: PropTypes.func,
+  setDate: PropTypes.func,
   date: momentPropTypes.momentObj,
+  setFocused: PropTypes.func,
   focused: PropTypes.bool
 };
 
