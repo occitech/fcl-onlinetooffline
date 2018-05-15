@@ -3,6 +3,12 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size-adjust: 100%;
+  $this: &;
+  .container-home {
+    #{$this} {
+      color: red;
+    }
+  }
 }
 
 body {
@@ -18,4 +24,8 @@ body {
 input,
 button {
   font-family: $mainFontFamily;
+}
+
+.container-home {
+  overflow: hidden;
 }

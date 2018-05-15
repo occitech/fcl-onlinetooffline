@@ -1,9 +1,12 @@
 import React from "react";
 import "./Layout.scss";
 import MobileFirstBanner from "theme/pages/MobileFirstBanner";
-const Layout = ({ children, header, footer }) => {
+import { withRouter } from "react-router";
+
+const Layout = ({ children, header, footer, location }) => {
+  const layoutClasse = `container${location.pathname === "/" ? "-home" : ""}`;
   return (
-    <div className="container">
+    <div className={layoutClasse}>
       <MobileFirstBanner />
       {header}
       {children}
@@ -12,4 +15,4 @@ const Layout = ({ children, header, footer }) => {
   );
 };
 
-export default Layout;
+export default withRouter(Layout);

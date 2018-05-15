@@ -17,7 +17,9 @@ const ProductHomeView = ({
   const productHomeViewClasses = `product-home-view${active ? "--active" : ""}`;
   return (
     <div className={productHomeViewClasses}>
-      <img src={createMediaUrlFromPath(product.imageUrl)} />
+      <div className="product-home-view__background">
+        <img src={createMediaUrlFromPath(product.imageUrl)} />
+      </div>
       <div className="product-home-view__title">
         <strong>{accentTitle}</strong>
         {Title}
