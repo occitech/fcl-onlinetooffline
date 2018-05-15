@@ -1,8 +1,9 @@
 .try-it {
   padding: 1em 0;
-  font-size: $normal;
+  font-size: $body;
   max-width: $tablet;
   margin: 0 auto;
+  color: $fontSecondaryColor;
 
   &__header {
     font-size: $h2;
@@ -25,12 +26,15 @@
         bottom: 0;
         height: 2px;
         width: 3em;
-        background: $reverseBackgroundColor;
+        background: $shade02;
       }
     }
 
     &__steps-count {
-      color: $shade03;
+      display: flex;
+      align-items: center;
+      font-size: $h3;
+      color: $shade02;
     }
   }
 

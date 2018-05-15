@@ -25,7 +25,6 @@ const ProductList = ({
       {products.map((product, index) => {
         return (
           <ProductHomeView
-            key={product.sku}
             accentTitle={product.accentTitle}
             Title={product.Title}
             contentProductIntro={product.contentProductIntro}

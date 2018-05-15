@@ -4,7 +4,7 @@
   align-items: center;
   padding: 1em;
   background: azure;
-
+  color: $fontSecondaryColor;
   &--clicked {
     display: none;
   }

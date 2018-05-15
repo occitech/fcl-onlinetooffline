@@ -7,7 +7,7 @@ a {
   }
 
   &.simple {
-    color: $fontColor;
+    color: $fontSecondaryColor;
     text-decoration: none;
     font-weight: $regular;
   }
@@ -19,19 +19,21 @@ a {
     color: $reverseFontColor;
     text-transform: uppercase;
     text-decoration: none;
-    background: $reverseBackgroundColor;
+    background-image: $gradient;
+    background-color: $brandSecondary;
     padding: 1.4em 3em;
     border-radius: 50px;
+    transition: all 0.3s;
     &:hover {
-      background-color: lighten($reverseBackgroundColor, 10%);
+      background-color: $shade05;
     }
   }
 
   &.important {
     color: $fontColor;
     text-decoration: none;
-    border: 1px solid black;
-    font-size: $normal;
+    background: linear-gradient(to bottom right, #f50146, #002c56);
+    font-size: $body;
     text-transform: uppercase;
     border-radius: 8px;
     padding: 1em 3em;

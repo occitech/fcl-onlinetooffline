@@ -5,4 +5,17 @@
     position: relative;
     z-index: 1200;
   }
+  &__map {
+    overflow: hidden;
+    height: 360px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .select-store {
+    &__map {
+      overflow: hidden;
+      height: 720px;
+    }
+  }
 }

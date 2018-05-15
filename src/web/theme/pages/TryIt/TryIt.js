@@ -71,7 +71,11 @@ const steps = [
 ];
 
 const nextStepButtonTitle = ({ steps, currentStep, setStepIsFilled }) => {
-  if ("Why" === steps[currentStep].name) {
+  if ("Where" === steps[currentStep].name) {
+    return `Step ${currentStep + 2} : Pick a date`;
+  } else if ("When" === steps[currentStep].name) {
+    return `Step ${currentStep + 2} : Confirmation`;
+  } else if ("Why" === steps[currentStep].name) {
     return "FINISH MY BOOKING";
   }
   if ("Validation" === steps[currentStep].name) {

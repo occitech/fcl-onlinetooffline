@@ -25,7 +25,8 @@
     }
     &__pins {
       color: $white;
-      background: $reverseBackgroundColor;
+      background-image: $gradient;
+      background-color: $brandSecondary;
       #{$this}--validated & {
         color: $white;
         background: $success;

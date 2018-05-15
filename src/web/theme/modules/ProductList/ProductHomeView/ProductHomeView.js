@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Button from "theme/ui/atoms/Button";
 import IconWithLabel from "theme/ui/molecules/IconWithLabel";
 import Link from "theme/ui/atoms/Typography/Link";
+import createMediaUrlFromPath from "../../../../utils/createMediaUrlFromPath";
 import "./ProductHomeView.scss";
 
 const ProductHomeView = ({
@@ -16,6 +17,9 @@ const ProductHomeView = ({
   const productHomeViewClasses = `product-home-view${active ? "--active" : ""}`;
   return (
     <div className={productHomeViewClasses}>
+      <div className="product-home-view__background">
+        <img src={createMediaUrlFromPath(product.imageUrl)} />
+      </div>
       <div className="product-home-view__title">
         <strong>{accentTitle}</strong>
         {Title}
@@ -25,7 +29,7 @@ const ProductHomeView = ({
       </div>
       <div className="product-home-view__action">
         <div className="product-home-view__action__view-product">
-          <Link to={`product/${product.sku}`} type="important">
+          <Link to={`product/${product.sku}`} type="dark">
             View Product
           </Link>
         </div>

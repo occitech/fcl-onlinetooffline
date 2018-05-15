@@ -2,6 +2,7 @@ $verticalSpacing: 2rem;
 
 .product-view {
   padding: $verticalSpacing 0;
+  color: $fontSecondaryColor;
 
   &__title {
     text-align: center;
@@ -23,12 +24,15 @@ $verticalSpacing: 2rem;
   & > * {
     margin: 1em 0;
   }
+  .button {
+    color: $fontSecondaryColor;
+  }
 }
 
 @media screen and (min-width: $tablet) {
   .product-view {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-flow: row wrap;
 
     &__title {
@@ -39,6 +43,10 @@ $verticalSpacing: 2rem;
 
   .product-actions {
     margin-bottom: 3rem;
+  }
+
+  .product-description {
+    flex-direction: column;
   }
 }
 

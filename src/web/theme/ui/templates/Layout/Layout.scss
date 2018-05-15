@@ -1,16 +1,31 @@
 html {
-  font-size: $normal;
+  font-size: $body;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size-adjust: 100%;
+  $this: &;
+  .container-home {
+    #{$this} {
+      color: red;
+    }
+  }
 }
 
 body {
   color: $fontColor;
   background: $backgroundColor;
   font-family: $mainFontFamily;
-  font-style: normal;
+  font-style: $body;
   font-weight: $regular;
   line-height: 1.42857143;
   margin: 0;
+}
+
+input,
+button {
+  font-family: $mainFontFamily;
+}
+
+.container-home {
+  overflow: hidden;
 }

@@ -9,7 +9,6 @@ const MobileFirstBanner = ({ bannerState, setBannerState }) => {
   return (
     <div
       onClick={() => {
-        console.log("CLICK");
         setBannerState(true);
       }}
       className={bannerClassName}

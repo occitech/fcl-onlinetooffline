@@ -1,9 +1,9 @@
 .button {
-  background-color: $backgroundColor;
+  background-color: transparent;
   border: none;
-  color: $fontSecondaryColor;
+  color: $fontColor;
   font-weight: $bold;
-  font-size: $normal;
+  font-size: $body;
   padding: 1.4em 3em;
   text-transform: uppercase;
   transition: all 0.2s;
@@ -31,18 +31,19 @@
     width: 100%;
     display: block;
     background-color: $backgroundColor;
-    border: 1px solid black;
     border-radius: 50px;
     &:hover {
-      background-color: darken($backgroundColor, 10%);
+      background-color: $shade02;
     }
   }
 
   &.simple {
+    color: $fontSecondaryColor;
     border: none;
     border-radius: none;
     font-weight: $regular;
     text-transform: unset;
+    padding: 0;
     &:hover {
       background-color: $backgroundColor;
     }
@@ -50,16 +51,34 @@
 
   &.dark {
     text-align: center;
+    width: unset;
+    display: block;
+    color: $reverseFontColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-image: $gradient;
+    background-color: $brandSecondary;
+    padding: 1.4em 3em;
+    border-radius: 50px;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $shade05;
+    }
+  }
+  &.dark {
+    text-align: center;
     width: 100%;
     display: block;
     color: $reverseFontColor;
     text-transform: uppercase;
     text-decoration: none;
-    background: $reverseBackgroundColor;
+    background-image: $gradient;
+    background-color: $brandSecondary;
     padding: 1.4em 3em;
     border-radius: 50px;
+    transition: all 0.3s;
     &:hover {
-      background-color: lighten($reverseBackgroundColor, 10%);
+      background-color: $shade05;
     }
   }
 }
