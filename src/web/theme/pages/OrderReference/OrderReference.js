@@ -7,7 +7,15 @@ import { Mutation } from "react-apollo";
 import EnhanceOrderReference from "./EnhanceOrderReference";
 import { CartModal } from "theme/modules/Cart";
 
-const OrderReference = ({ customerOrder, checkCustomerID }) => {
+const OrderReference = ({
+  customerOrder,
+  checkCustomerID,
+  noProductFound,
+  setnoProductFound
+}) => {
+  const actionClassName = `order-reference__action ${
+    noProductFound ? " order-reference__action--error" : ""
+  }`;
   return (
     <div className="order-reference">
       <div className="order-reference__title">

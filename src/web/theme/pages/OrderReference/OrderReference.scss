@@ -28,5 +28,10 @@
       border: none;
       border-bottom: 1px solid gray;
     }
+    &--error:after {
+      content: "the code provided was not correct or no products were linked to it";
+      padding: 1em;
+      color: $error;
+    }
   }
 }

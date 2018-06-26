@@ -37,6 +37,7 @@ const orders = [
 export default () =>
   compose(
     withState("customerOrder", "setCustomerOrder", { id: 0 }),
+    withState("noProductFound", "setnoProductFound", false),
     withHandlers({
       checkCustomerID: props => e =>
         orders.filter(order => order.id == e.target.value).length > 0
