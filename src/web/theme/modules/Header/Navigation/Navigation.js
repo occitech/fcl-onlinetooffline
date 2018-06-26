@@ -39,6 +39,11 @@ const Navigation = ({ isNavigationOpened, toggleNavigation }) => {
                 Order Reference
               </Link>
             </div>
+            <div className="navigation__linklist__label">
+              <Link type="simple" to="/">
+                Home
+              </Link>
+            </div>
           </div>
         </ReactModal>
       </ModalContext.Provider>
