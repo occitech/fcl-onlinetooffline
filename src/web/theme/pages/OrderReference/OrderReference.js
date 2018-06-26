@@ -2,7 +2,7 @@ import React from "react";
 import { H1 } from "theme/ui/atoms/Typography/Heading";
 import "./OrderReference.scss";
 import Button from "theme/ui/atoms/Button";
-import AddToCartMutation from "./AddToCartMutation.gql";
+import AddToCartMutation from "theme/ui/molecules/AddToCart/AddToCartMutation.gql";
 import { Mutation } from "react-apollo";
 import EnhanceOrderReference from "./EnhanceOrderReference";
 
