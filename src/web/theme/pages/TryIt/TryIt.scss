@@ -39,7 +39,7 @@
   }
 
   &__footer {
-    padding: 1em $tryItPadding;
+    padding: $tryItPadding;
 
     &__error {
       display: none;

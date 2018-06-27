@@ -1,6 +1,8 @@
 import React from "react";
 import "./Validation.scss";
 import validation from "./Validation.png";
+import Transition from "theme/ui/molecules/Transition";
+
 import PropTypes from "prop-types";
 
 const getMonthName = MonthNumber => {
@@ -60,23 +62,27 @@ const getDayName = dayNumber => {
 const Validation = ({ step = "Validation", tryItState }) => {
   return (
     <div className="validation">
-      <div className="validation__pic">
-        <img src={validation} />
-      </div>
-      <div className="validation__confirmation">
-        {`We confirm your appointment with us on`}
-        <strong>{` ${getDayName(tryItState.date.getDay())}, ${getMonthName(
-          tryItState.date.getMonth()
-        )} ${tryItState.date.getDate()}th`}</strong>
-        {` in our store located at the following address :`}
-        <div className="validation__confirmation__address">
-          <strong> {tryItState.address} </strong>
+      <Transition type="fadeInTop">
+        <div className="validation__pic">
+          <img alt="validation" src={validation} />
         </div>
-      </div>
-      <div>
-        Our team will prepare everything. Just come, test your guitar and take
-        your final decision. See you soon !
-      </div>
+      </Transition>
+      <Transition type="fadeInTop-half-delayed">
+        <div className="validation__confirmation">
+          {`We confirm your appointment with us on`}
+          <strong>{` ${getDayName(tryItState.date.getDay())}, ${getMonthName(
+            tryItState.date.getMonth()
+          )} ${tryItState.date.getDate()}th`}</strong>
+          {` in our store located at the following address :`}
+          <div className="validation__confirmation__address">
+            <strong> {tryItState.address} </strong>
+          </div>
+        </div>
+        <div>
+          Our team will prepare everything. Just come, test your guitar and take
+          your final decision. See you soon !
+        </div>
+      </Transition>
     </div>
   );
 };
