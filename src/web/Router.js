@@ -20,7 +20,7 @@ export default () => (
         <Route path="/product/:sku" component={Product} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/tryit/:sku" component={TryIt} />
-        <Route path="/orderreference" component={OrderReference} />
+        <Route path="/order-reference" component={OrderReference} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

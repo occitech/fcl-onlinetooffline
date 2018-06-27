@@ -35,7 +35,7 @@ const Navigation = ({ isNavigationOpened, toggleNavigation }) => {
               </CartModal>
             </div>
             <div className="navigation__linklist__label">
-              <Link to="/orderreference" type="simple">
+              <Link to="/order-reference" type="simple">
                 Order Reference
               </Link>
             </div>
