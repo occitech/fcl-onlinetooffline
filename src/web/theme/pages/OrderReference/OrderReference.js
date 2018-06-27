@@ -11,7 +11,7 @@ const OrderReference = ({
   customerOrder,
   checkCustomerID,
   noProductFound,
-  setnoProductFound
+  setNoProductFound
 }) => {
   const actionClassName = `order-reference__action ${
     noProductFound ? " order-reference__action--error" : ""
@@ -39,12 +39,12 @@ const OrderReference = ({
                 <Button
                   onClick={e => {
                     e.preventDefault();
-                    setnoProductFound(false);
+                    setNoProductFound(false);
                     customerOrder.products && customerOrder.products.length > 0
-                      ? customerOrder.products.map(product =>
+                      ? customerOrder.products.forEach(product =>
                           addToCart({ variables: { sku: product.sku } })
                         )
-                      : setnoProductFound(true);
+                      : setNoProductFound(true);
                   }}
                   status={loading ? "loading" : ""}
                   type="dark"
@@ -55,6 +55,11 @@ const OrderReference = ({
             </Mutation>
           )}
         </CartModal>
+        {noProductFound && (
+          <div className="order-reference__action--error">
+            The code provided was not correct or no products were linked to it
+          </div>
+        )}
       </div>
     </div>
   );

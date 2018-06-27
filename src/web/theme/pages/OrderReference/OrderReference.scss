@@ -3,10 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  &__title {
-    h1 {
-    }
-  }
 
   &__action {
     display: flex;
@@ -26,8 +22,7 @@
       border-bottom: 1px solid gray;
       margin: 2em auto;
     }
-    &--error:after {
-      content: "the code provided was not correct or no products were linked to it";
+    &--error {
       padding: 1em;
       color: $error;
     }

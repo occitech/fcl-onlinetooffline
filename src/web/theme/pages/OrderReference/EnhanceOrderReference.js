@@ -37,13 +37,13 @@ const orders = [
 export default () =>
   compose(
     withState("customerOrder", "setCustomerOrder", { id: 0 }),
-    withState("noProductFound", "setnoProductFound", false),
+    withState("noProductFound", "setNoProductFound", false),
     withHandlers({
-      checkCustomerID: props => e =>
-        orders.filter(order => order.id == e.target.value).length > 0
-          ? props.setCustomerOrder(
-              orders.filter(order => order.id == e.target.value)[0]
-            )
-          : props.setCustomerOrder({ id: 0 })
+      checkCustomerID: props => e => {
+        const foundOrder = orders.find(order => order.id == e.target.value);
+        foundOrder
+          ? props.setCustomerOrder(foundOrder)
+          : props.setCustomerOrder({ id: 0 });
+      }
     })
   );
