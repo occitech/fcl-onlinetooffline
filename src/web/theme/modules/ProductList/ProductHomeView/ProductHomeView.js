@@ -45,7 +45,7 @@ const ProductHomeView = ({
         <Transition type="fadeInTop-double-delayed" delayed>
           <div className="product-home-view__action__next-product">
             <Button onClick={nextProduct} type="simple">
-              <IconWithLabel icon="arrow-down" type="down">
+              <IconWithLabel animated icon="arrow-down" type="down">
                 Next Product
               </IconWithLabel>
             </Button>
