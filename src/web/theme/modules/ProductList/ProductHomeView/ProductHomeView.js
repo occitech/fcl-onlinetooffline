@@ -4,7 +4,7 @@ import Button from "theme/ui/atoms/Button";
 import IconWithLabel from "theme/ui/molecules/IconWithLabel";
 import Link from "theme/ui/atoms/Typography/Link";
 import createMediaUrlFromPath from "../../../../utils/createMediaUrlFromPath";
-import Transition from "./Transition";
+import Transition from "theme/ui/molecules/Transition";
 import "./ProductHomeView.scss";
 
 const ProductHomeView = ({
