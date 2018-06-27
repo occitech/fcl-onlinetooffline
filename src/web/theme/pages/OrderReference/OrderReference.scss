@@ -7,18 +7,15 @@
     h1 {
     }
   }
-  &__instruction {
-    padding: 1em;
-  }
+
   &__action {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
     max-width: $desktop;
-    padding-top: 10em;
 
     .button {
       width: unset;
@@ -27,6 +24,7 @@
     input {
       border: none;
       border-bottom: 1px solid gray;
+      margin: 2em auto;
     }
     &--error:after {
       content: "the code provided was not correct or no products were linked to it";

@@ -22,10 +22,16 @@ const OrderReference = ({
         <H1>Order Reference</H1>
       </div>
       <div className="order-reference__catch-phrase">
-        Your order is waiting for you
+        Your order is waiting for you.
       </div>
-      <div className="order-reference__instruction">fill your order code</div>
+      <div className="order-reference__instruction">Fill your order code</div>
       <div className={actionClassName}>
+        <input
+          onChange={checkCustomerID}
+          type="number"
+          id="customerOrderId"
+          placeholder="Your code goes here"
+        />
         <CartModal>
           {openCart => (
             <Mutation mutation={AddToCartMutation} onCompleted={openCart}>
@@ -49,7 +55,6 @@ const OrderReference = ({
             </Mutation>
           )}
         </CartModal>
-        <input onChange={checkCustomerID} type="number" id="customerOrderId" />
       </div>
     </div>
   );
