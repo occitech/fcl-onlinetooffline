@@ -26,7 +26,7 @@ const ProductList = ({
         return (
           <ProductHomeView
             accentTitle={product.accentTitle}
-            Title={product.Title}
+            title={product.Title}
             contentProductIntro={product.contentProductIntro}
             product={product}
             active={index === currentProductIndex}

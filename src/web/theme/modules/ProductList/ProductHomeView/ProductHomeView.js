@@ -8,7 +8,7 @@ import "./ProductHomeView.scss";
 
 const ProductHomeView = ({
   accentTitle,
-  Title,
+  title,
   contentProductIntro,
   product,
   active,
