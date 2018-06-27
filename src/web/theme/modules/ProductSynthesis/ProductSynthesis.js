@@ -3,17 +3,24 @@ import PropTypes from "prop-types";
 import Description from "./Description";
 import Actions from "./Actions";
 import TitleWithPrice from "theme/ui/molecules/TitleWithPrice";
+import Transition from "theme/ui/molecules/Transition";
 import "./ProductSynthesis.scss";
 
 const ProductSynthesis = ({ product }) => (
   <div className="product-view">
     <div className="product-view__title">
-      <TitleWithPrice price={product.prices.finalPrice.priceInclTax}>
-        {product.name}
-      </TitleWithPrice>
+      <Transition type="fadeInTop">
+        <TitleWithPrice price={product.prices.finalPrice.priceInclTax}>
+          {product.name}
+        </TitleWithPrice>
+      </Transition>
     </div>
-    <Actions product={product} />
-    <Description>{product.description}</Description>
+    <Transition type="fadeInTop-half-delayed">
+      <Actions product={product} />
+    </Transition>
+    <Transition type="fadeInTop-delayed">
+      <Description>{product.description}</Description>
+    </Transition>
   </div>
 );
 
