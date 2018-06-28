@@ -1,14 +1,14 @@
 import React from "react";
 import Observer from "@researchgate/react-intersection-observer";
 import { compose, withState, withHandlers, lifecycle } from "recompose";
-import "./Transition.scss";
+import "./TransitionOnScroll.scss";
 window.requestAnimationFrame =
   window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
   window.webkitRequestAnimationFrame ||
   window.msRequestAnimationFrame;
 
-const Transition = ({
+const TransitionOnScroll = ({
   children,
   handleChange,
   isVisible,
@@ -66,4 +66,4 @@ export default compose(
       }
     }
   })
-)(Transition);
+)(TransitionOnScroll);
