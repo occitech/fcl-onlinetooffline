@@ -21,7 +21,7 @@ const Reinsurance = ({
       actionDescription="A little confirmation"
       collapsed={collapsed}
     >
-      <Transition type="fadeInTop-half-delayed">
+      <Transition type="fade-in-top" delay={0.7} duration={0.5}>
         <div className="reinsurance__content">
           <div>
             Please be sure you have selected the right store and date before

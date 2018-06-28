@@ -62,12 +62,12 @@ const getDayName = dayNumber => {
 const Validation = ({ step = "Validation", tryItState }) => {
   return (
     <div className="validation">
-      <Transition type="fadeInTop">
+      <Transition type="fade-in-top" delay={0.5} duration={0.5}>
         <div className="validation__pic">
           <img alt="validation" src={validation} />
         </div>
       </Transition>
-      <Transition type="fadeInTop-half-delayed">
+      <Transition type="fade-in-top" delay={0.7} duration={0.5}>
         <div className="validation__confirmation">
           {`We confirm your appointment with us on`}
           <strong>{` ${getDayName(tryItState.date.getDay())}, ${getMonthName(

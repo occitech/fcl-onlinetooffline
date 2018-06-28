@@ -23,26 +23,26 @@ const ProductHomeView = ({
       <div className="product-home-view__background">
         <img alt={title} src={createMediaUrlFromPath(product.imageUrl)} />
       </div>
-      <Transition type="fadeInTop">
+      <Transition type="fade-in-top" delay={0.5} duration={0.5}>
         <div className="product-home-view__title">
           <strong>{accentTitle}</strong>
           {title}
         </div>
       </Transition>
-      <Transition type="fadeInTop-half-delayed">
+      <Transition type="fade-in-top" delay={0.7} duration={0.5}>
         <div className="product-home-view__content">
           {contentProductIntro} <strong>{product.name}</strong>
         </div>
       </Transition>
       <div className="product-home-view__action">
-        <Transition type="fadeInTop-delayed" delayed>
+        <Transition type="fade-in-top" delay={1} duration={0.5}>
           <div className="product-home-view__action__view-product">
             <Link to={`product/${product.sku}`} type="dark">
               View Product
             </Link>
           </div>
         </Transition>
-        <Transition type="fadeInTop-double-delayed" delayed>
+        <Transition type="fade-in-top" delay={1.2} duration={0.5}>
           <div className="product-home-view__action__next-product">
             <Button onClick={nextProduct} type="simple">
               <IconWithLabel animated icon="arrow-down" type="down">

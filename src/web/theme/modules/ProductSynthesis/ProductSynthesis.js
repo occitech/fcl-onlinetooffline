@@ -8,17 +8,17 @@ import "./ProductSynthesis.scss";
 
 const ProductSynthesis = ({ product }) => (
   <div className="product-view">
-    <div className="product-view__title">
-      <Transition type="fadeInTop">
+    <Transition type="fade-in-top" delay={0.5} duration={0.5}>
+      <div className="product-view__title">
         <TitleWithPrice price={product.prices.finalPrice.priceInclTax}>
           {product.name}
         </TitleWithPrice>
-      </Transition>
-    </div>
-    <Transition type="fadeInTop-half-delayed">
+      </div>
+    </Transition>
+    <Transition type="fade-in-top" delay={0.7} duration={0.5}>
       <Actions product={product} />
     </Transition>
-    <Transition type="fadeInTop-delayed">
+    <Transition type="fade-in-top" delay={1} duration={0.5}>
       <Description>{product.description}</Description>
     </Transition>
   </div>

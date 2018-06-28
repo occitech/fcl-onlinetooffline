@@ -33,7 +33,7 @@ const SelectStore = ({
         actionDescription="Select a store location on the map"
         collapsed={collapsed}
       >
-        <Transition type="fadeInTop-half-delayed">
+        <Transition type="fade-in-top" delay={0.7} duration={0.5}>
           <div className="select-store__searchbar">
             <Select
               value={

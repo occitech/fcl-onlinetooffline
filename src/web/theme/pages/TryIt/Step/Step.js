@@ -15,7 +15,7 @@ const Step = ({
 
   return (
     <Fragment>
-      <Transition type="fadeInTop">
+      <Transition type="fade-in-top" delay={0.5} duration={0.5}>
         <div className={stepTitleClasses}>
           <span className="step__title__pins">{stepIndex + 1}</span>
           <span className="step__title__content">{actionDescription}</span>

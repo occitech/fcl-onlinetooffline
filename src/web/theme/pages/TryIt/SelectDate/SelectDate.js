@@ -30,7 +30,7 @@ const SelectDate = ({
         actionDescription="Select a date on the calendar"
         collapsed={collapsed}
       >
-        <Transition type="fadeInTop-half-delayed">
+        <Transition type="fade-in-top" delay={0.7} duration={0.5}>
           <div className="select-date__calendar">
             <DayPickerSingleDateController
               date={date}
