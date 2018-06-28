@@ -97,7 +97,7 @@ const TryIt = props => {
         </div>
       ) : null}
       {steps[props.currentStep].renderStep(props)}
-      <Transition type="fade-in-top" delay={1} duration={0.5}>
+      <Transition type="fade-in-top" delay={0.2} duration={0.5}>
         <div className="try-it__footer">
           <Button
             onClick={() => {
