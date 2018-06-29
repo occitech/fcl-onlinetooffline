@@ -10,6 +10,7 @@ import Product from "./theme/pages/Product";
 import Checkout from "./theme/pages/Checkout";
 import TryIt from "./theme/pages/TryIt";
 import NotFound from "./theme/pages/NotFound";
+import OrderReference from "./theme/pages/OrderReference";
 
 export default () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ export default () => (
         <Route path="/product/:sku" component={Product} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/tryit/:sku" component={TryIt} />
+        <Route path="/order-reference" component={OrderReference} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
