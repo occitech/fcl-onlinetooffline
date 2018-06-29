@@ -2,6 +2,7 @@ import React from "react";
 import Step from "../Step";
 import PropTypes from "prop-types";
 import { compose, withState, withHandlers } from "recompose";
+import Transition from "theme/ui/molecules/Transition";
 import "./Reinsurance.scss";
 
 const Reinsurance = ({
@@ -20,26 +21,28 @@ const Reinsurance = ({
       actionDescription="A little confirmation"
       collapsed={collapsed}
     >
-      <div className="reinsurance__content">
-        <div>
-          Please be sure you have selected the right store and date before
-          booking the appointment.
+      <Transition type="fadeInTop-half-delayed">
+        <div className="reinsurance__content">
+          <div>
+            Please be sure you have selected the right store and date before
+            booking the appointment.
+          </div>
+          <div>
+            Last little action required from you: accept our
+            <strong> Terms & Conditions</strong>. Then you’re good to go!
+          </div>
+          <div className="reinsurance__content__form">
+            <input
+              onChange={setTermConditionChecked}
+              type="checkbox"
+              id="termCondition"
+            />
+            <label htmlFor="termCondition">
+              I agree with the Terms & Conditions.
+            </label>
+          </div>
         </div>
-        <div>
-          Last little action required from you: accept our
-          <strong> Terms & Conditions</strong>. Then you’re good to go!
-        </div>
-        <div className="reinsurance__content__form">
-          <input
-            onChange={setTermConditionChecked}
-            type="checkbox"
-            id="termCondition"
-          />
-          <label htmlFor="termCondition">
-            I agree with the Terms & Conditions.
-          </label>
-        </div>
-      </div>
+      </Transition>
     </Step>
   );
 };

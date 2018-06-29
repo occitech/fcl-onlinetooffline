@@ -5,10 +5,11 @@
   img {
     width: 54%;
     max-width: 15em;
+    min-width: 12.5em;
   }
 
   div {
-    padding: $tryItPadding;
+    padding: calc(#{$tryItPadding} - 1em);
     padding-bottom: 0;
   }
 }

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { compose } from "recompose";
 import EnhanceTryIt from "./EnhanceTryIt";
 import Button from "theme/ui/atoms/Button";
+import Transition from "theme/ui/molecules/Transition";
 
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
@@ -96,29 +97,31 @@ const TryIt = props => {
         </div>
       ) : null}
       {steps[props.currentStep].renderStep(props)}
-      <div className="try-it__footer">
-        <Button
-          onClick={() => {
-            if (props.stepIsFilled) {
-              props.gotoStepNumber(props.currentStep + 1);
-            } else if (steps[props.currentStep].name === "Validation") {
-              props.history.push("/");
-            } else {
-              props.setDisplayError(true);
-            }
-          }}
-          type="dark"
-        >
-          {nextStepButtonTitle({ steps, currentStep: props.currentStep })}
-        </Button>
-        <div
-          className={`try-it__footer__error${
-            props.displayError ? "--displayed" : ""
-          }`}
-        >
-          You must fill the current form to be able to go further
+      <Transition type="fadeInTop-delayed">
+        <div className="try-it__footer">
+          <Button
+            onClick={() => {
+              if (props.stepIsFilled) {
+                props.gotoStepNumber(props.currentStep + 1);
+              } else if (steps[props.currentStep].name === "Validation") {
+                props.history.push("/");
+              } else {
+                props.setDisplayError(true);
+              }
+            }}
+            type="dark"
+          >
+            {nextStepButtonTitle({ steps, currentStep: props.currentStep })}
+          </Button>
+          <div
+            className={`try-it__footer__error${
+              props.displayError ? "--displayed" : ""
+            }`}
+          >
+            You must fill the current form to be able to go further
+          </div>
         </div>
-      </div>
+      </Transition>
     </div>
   );
 };

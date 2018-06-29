@@ -8,11 +8,13 @@ import arrowDown from "./arrow-down.svg?inline";
 import menu from "./menu.svg?inline";
 import "./Icon.scss";
 
-const Icon = ({ icon }) => {
+const Icon = ({ icon, animated }) => {
+  const animatedClass = `icon ${animated ? "icon--animated" : ""}`;
+
   if (icon === "arrow-left") {
     return (
       <span
-        className="icon"
+        className={animatedClass}
         dangerouslySetInnerHTML={{ __html: arrowLeft }}
         title="Go back"
       />
@@ -20,7 +22,7 @@ const Icon = ({ icon }) => {
   } else if (icon === "close") {
     return (
       <span
-        className="icon"
+        className={animatedClass}
         dangerouslySetInnerHTML={{ __html: close }}
         aria-label="Close"
         title="Close"
@@ -29,7 +31,7 @@ const Icon = ({ icon }) => {
   } else if (icon === "trash") {
     return (
       <span
-        className="icon"
+        className={animatedClass}
         dangerouslySetInnerHTML={{ __html: trash }}
         aria-hidden={true}
       />
@@ -37,19 +39,22 @@ const Icon = ({ icon }) => {
   } else if (icon === "cart") {
     return (
       <span
-        className="icon"
+        className={animatedClass}
         dangerouslySetInnerHTML={{ __html: cart }}
         aria-hidden={true}
       />
     );
   } else if (icon === "arrow-down") {
     return (
-      <span className="icon" dangerouslySetInnerHTML={{ __html: arrowDown }} />
+      <span
+        className={animatedClass}
+        dangerouslySetInnerHTML={{ __html: arrowDown }}
+      />
     );
   } else if (icon === "menu") {
     return (
       <span
-        className="icon"
+        className={animatedClass}
         dangerouslySetInnerHTML={{ __html: menu }}
         aria-hidden={true}
       />

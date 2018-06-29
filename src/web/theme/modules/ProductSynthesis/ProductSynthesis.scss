@@ -12,6 +12,7 @@ $verticalSpacing: 2rem;
   }
   &__description {
     text-align: center;
+    padding-top: $verticalSpacing;
     &__title {
       font-weight: $bold;
     }
@@ -26,6 +27,12 @@ $verticalSpacing: 2rem;
   }
   .button {
     color: $fontSecondaryColor;
+    border: 1px solid #eceade;
+    transition: all 0.3s;
+  }
+  .button:hover {
+    background-color: #eceade;
+    border: 1px solid white;
   }
 }
 
