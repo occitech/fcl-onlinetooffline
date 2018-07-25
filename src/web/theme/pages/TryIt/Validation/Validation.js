@@ -1,7 +1,7 @@
 import React from "react";
 import "./Validation.scss";
 import validation from "./Validation.png";
-import Transition from "theme/ui/molecules/Transition";
+import TransitionOnScroll from "theme/ui/molecules/TransitionOnScroll";
 
 import PropTypes from "prop-types";
 
@@ -62,12 +62,12 @@ const getDayName = dayNumber => {
 const Validation = ({ step = "Validation", tryItState }) => {
   return (
     <div className="validation">
-      <Transition type="fadeInTop">
+      <TransitionOnScroll type="fade-in-top" delay={0.5} duration={0.5}>
         <div className="validation__pic">
           <img alt="validation" src={validation} />
         </div>
-      </Transition>
-      <Transition type="fadeInTop-half-delayed">
+      </TransitionOnScroll>
+      <TransitionOnScroll type="fade-in-top" delay={0.7} duration={0.5}>
         <div className="validation__confirmation">
           {`We confirm your appointment with us on`}
           <strong>{` ${getDayName(tryItState.date.getDay())}, ${getMonthName(
@@ -82,7 +82,7 @@ const Validation = ({ step = "Validation", tryItState }) => {
           Our team will prepare everything. Just come, test your guitar and take
           your final decision. See you soon !
         </div>
-      </Transition>
+      </TransitionOnScroll>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import "react-dates/initialize";
 import momentPropTypes from "react-moment-proptypes";
 import { DayPickerSingleDateController } from "react-dates";
 
-import Transition from "theme/ui/molecules/Transition";
+import TransitionOnScroll from "theme/ui/molecules/TransitionOnScroll";
 import "react-dates/lib/css/_datepicker.css";
 import "./SelectDate.scss";
 
@@ -30,7 +30,7 @@ const SelectDate = ({
         actionDescription="Select a date on the calendar"
         collapsed={collapsed}
       >
-        <Transition type="fadeInTop-half-delayed">
+        <TransitionOnScroll type="fade-in-top" delay={0.7} duration={0.5}>
           <div className="select-date__calendar">
             <DayPickerSingleDateController
               date={date}
@@ -45,7 +45,7 @@ const SelectDate = ({
               numberOfMonths={1}
             />
           </div>
-        </Transition>
+        </TransitionOnScroll>
       </Step>
     </div>
   );

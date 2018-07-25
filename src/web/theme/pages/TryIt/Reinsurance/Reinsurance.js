@@ -2,7 +2,7 @@ import React from "react";
 import Step from "../Step";
 import PropTypes from "prop-types";
 import { compose, withState, withHandlers } from "recompose";
-import Transition from "theme/ui/molecules/Transition";
+import TransitionOnScroll from "theme/ui/molecules/TransitionOnScroll";
 import "./Reinsurance.scss";
 
 const Reinsurance = ({
@@ -21,7 +21,7 @@ const Reinsurance = ({
       actionDescription="A little confirmation"
       collapsed={collapsed}
     >
-      <Transition type="fadeInTop-half-delayed">
+      <TransitionOnScroll type="fade-in-top" delay={0.7} duration={0.5}>
         <div className="reinsurance__content">
           <div>
             Please be sure you have selected the right store and date before
@@ -42,7 +42,7 @@ const Reinsurance = ({
             </label>
           </div>
         </div>
-      </Transition>
+      </TransitionOnScroll>
     </Step>
   );
 };

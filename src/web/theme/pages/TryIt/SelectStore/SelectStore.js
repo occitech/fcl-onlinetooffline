@@ -10,7 +10,7 @@ import EnhanceSelectStore from "./EnhanceSelectStore";
 import SelectStoreQuery from "./SelectStoreQuery.gql";
 import Select from "react-select";
 
-import Transition from "theme/ui/molecules/Transition";
+import TransitionOnScroll from "theme/ui/molecules/TransitionOnScroll";
 import "./SelectStore.scss";
 
 const SelectStore = ({
@@ -33,7 +33,7 @@ const SelectStore = ({
         actionDescription="Select a store location on the map"
         collapsed={collapsed}
       >
-        <Transition type="fadeInTop-half-delayed">
+        <TransitionOnScroll type="fade-in-top" delay={0.7} duration={0.5}>
           <div className="select-store__searchbar">
             <Select
               value={
@@ -99,7 +99,7 @@ const SelectStore = ({
               </Map>
             )}
           </div>
-        </Transition>
+        </TransitionOnScroll>
       </Step>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Transition from "theme/ui/molecules/Transition";
+import TransitionOnScroll from "theme/ui/molecules/TransitionOnScroll";
 import "./Step.scss";
 
 const Step = ({
@@ -15,12 +15,12 @@ const Step = ({
 
   return (
     <Fragment>
-      <Transition type="fadeInTop">
+      <TransitionOnScroll type="fade-in-top" delay={0.5} duration={0.5}>
         <div className={stepTitleClasses}>
           <span className="step__title__pins">{stepIndex + 1}</span>
           <span className="step__title__content">{actionDescription}</span>
         </div>
-      </Transition>
+      </TransitionOnScroll>
       {collapsed ? null : children}
     </Fragment>
   );

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { compose } from "recompose";
 import EnhanceTryIt from "./EnhanceTryIt";
 import Button from "theme/ui/atoms/Button";
-import Transition from "theme/ui/molecules/Transition";
+import TransitionOnScroll from "theme/ui/molecules/TransitionOnScroll";
 
 import "./TryIt.scss";
 import SelectStore from "./SelectStore";
@@ -97,7 +97,7 @@ const TryIt = props => {
         </div>
       ) : null}
       {steps[props.currentStep].renderStep(props)}
-      <Transition type="fadeInTop-delayed">
+      <TransitionOnScroll type="fade-in-top" delay={0.2} duration={0.5}>
         <div className="try-it__footer">
           <Button
             onClick={() => {
@@ -121,7 +121,7 @@ const TryIt = props => {
             You must fill the current form to be able to go further
           </div>
         </div>
-      </Transition>
+      </TransitionOnScroll>
     </div>
   );
 };

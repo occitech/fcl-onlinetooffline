@@ -1,0 +1,42 @@
+.transition {
+  &--fade-in-top {
+    transition: all;
+    opacity: 1;
+    transform: translateY(0px);
+
+    &--enter {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+  }
+
+  &--fade-in-bottom {
+    transform: translateY(0px);
+    transition: all;
+    opacity: 1;
+    &--enter {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+  }
+
+  &--fade-in-left {
+    transform: translateX(0px);
+    transition: all;
+    opacity: 1;
+    &--enter {
+      opacity: 0;
+      transform: translateX(-5px);
+    }
+  }
+
+  &--fade-in-right {
+    transform: translateX(0px);
+    transition: all;
+    opacity: 1;
+    &--enter {
+      opacity: 0;
+      transform: translateX(5px);
+    }
+  }
+}
